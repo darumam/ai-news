@@ -352,7 +352,7 @@ def main() -> int:
         INBOX_PATH.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         print(f"updated inbox: {added} new candidate(s), {len(output['items'])} unresolved")
     else:
-        print("inbox unchanged")
+        print(f"inbox unchanged: {len(output['items'])} unresolved candidate(s)")
     return 0
 
 

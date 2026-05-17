@@ -12,15 +12,6 @@
       "limit": 5
     },
     {
-      "name": "OpenAI Index",
-      "source": "OpenAI",
-      "kind": "html",
-      "url": "https://openai.com/index/",
-      "allowedHosts": ["openai.com", "www.openai.com"],
-      "limit": 5,
-      "includePathPrefixes": ["/index/"]
-    },
-    {
       "name": "Anthropic News",
       "source": "Anthropic",
       "kind": "html",
