@@ -1,0 +1,222 @@
+{
+  "lastUpdated": "2026-05-17",
+  "policy": "official-sources-only-unreviewed",
+  "items": [
+    {
+      "source": "OpenAI",
+      "date": "2026-05-17",
+      "title": "Work with Codex from anywhere",
+      "url": "https://openai.com/index/work-with-codex-from-anywhere",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-17",
+      "title": "Helping ChatGPT better recognize context in sensitive conversations",
+      "url": "https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-17",
+      "title": "Building a safe, effective sandbox to enable Codex on Windows",
+      "url": "https://openai.com/index/building-codex-windows-sandbox",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-05-17",
+      "title": "Introducing Claude Opus 4.7",
+      "url": "https://www.anthropic.com/news/claude-opus-4-7",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-05-17",
+      "title": "Introducing Claude Design by Anthropic Labs",
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-05-17",
+      "title": "Claude is a space to think We’ve made a choice: Claude will remain ad-free. We explain why advertising incentives are incompatible with a...",
+      "url": "https://www.anthropic.com/news/claude-is-a-space-to-think",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-05-17",
+      "title": "May 14, 2026 Announcements PwC is deploying Claude to build technology, execute deals, and reinvent enterprise functions for clients",
+      "url": "https://www.anthropic.com/news/pwc-expanded-partnership",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Mistral AI",
+      "date": "2026-05-17",
+      "title": "Remote agents in Vibe. Powered by Mistral Medium 3.5. Product",
+      "url": "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-05-17",
+      "title": "Sort providers by cost, latency, or throughput on AI Gateway",
+      "url": "https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-05-17",
+      "title": "Fast mode for Opus 4.7 available on AI Gateway",
+      "url": "https://vercel.com/changelog/fast-mode-for-opus-4-7-available-on-ai-gateway",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-05-17",
+      "title": "AI Gateway production index",
+      "url": "https://vercel.com/blog/ai-gateway-production-index",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-05-17",
+      "title": "Node.js 26.x now available on Vercel Sandboxes",
+      "url": "https://vercel.com/changelog/node-js-26-x-now-available-on-vercel-sandboxes",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-05-17",
+      "title": "How Superset built the IDE for AI agents on Vercel",
+      "url": "https://vercel.com/blog/how-superset-built-the-ide-for-ai-agents-on-vercel",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-16",
+      "title": "OpenAI and Malta partner to bring ChatGPT Plus to all citizens",
+      "url": "https://openai.com/index/malta-chatgpt-plus-partnership",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-15",
+      "title": "How business operations teams use Codex",
+      "url": "https://openai.com/academy/codex-for-work/how-business-operations-teams-use-codex",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-15",
+      "title": "Databricks brings GPT-5.5 to enterprise agent workflows",
+      "url": "https://openai.com/index/databricks",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-15",
+      "title": "How data science teams use Codex",
+      "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-15",
+      "title": "A new personal finance experience in ChatGPT",
+      "url": "https://openai.com/index/personal-finance-chatgpt",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-15",
+      "title": "Grok Code Fast 1 deprecated",
+      "url": "https://github.blog/changelog/2026-05-15-grok-code-fast-1-deprecated",
+      "statusHint": "deprecated",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-15",
+      "title": "Copilot Memory supports user preferences for Pro, Pro+ users",
+      "url": "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-14",
+      "title": "Team-level Copilot usage metrics now available via API",
+      "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-14",
+      "title": "Copilot cloud agent supports auto model selection",
+      "url": "https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Microsoft",
+      "date": "2022-12-06",
+      "title": "A conversation with Kevin Scott: What’s next in AI",
+      "url": "https://blogs.microsoft.com/ai/a-conversation-with-kevin-scott-whats-next-in-ai",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Microsoft",
+      "date": "2022-10-12",
+      "title": "From Hot Wheels to handling content: How brands are using Microsoft AI to be more productive and imaginative",
+      "url": "https://blogs.microsoft.com/ai/from-hot-wheels-to-handling-content-how-brands-are-using-microsoft-ai-to-be-more-productive-and-imaginative",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Microsoft",
+      "date": "2022-10-06",
+      "title": "Microsoft open sources its ‘farm of the future’ toolkit",
+      "url": "https://blogs.microsoft.com/ai/microsoft-open-sources-its-farm-of-the-future-toolkit",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Microsoft",
+      "date": "2022-07-25",
+      "title": "How data and AI will transform contact centres for financial services",
+      "url": "https://cloudblogs.microsoft.com/industry-blog/en-gb/financial-services/2022/07/25/how-data-and-ai-will-transform-contact-centres-for-financial-services",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    },
+    {
+      "source": "Microsoft",
+      "date": "2022-07-21",
+      "title": "AI-equipped drones study dolphins on the edge of extinction",
+      "url": "https://news.microsoft.com/apac/features/ai-drones-dolphins-maui63",
+      "statusHint": "stable",
+      "discoveredAt": "2026-05-17"
+    }
+  ]
+}

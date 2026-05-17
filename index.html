@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="公式ソースだけを対象に、AI関連の重要アップデートを短く日本語で要約する個人用ダッシュボード。"
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
+    />
+    <title>AI Signal Board | ニュース</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body data-page="news">
+    <header class="site-header">
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a class="active" href="index.html">ニュース</a>
+        <a href="inbox.html">更新通知</a>
+        <a href="compare.html">機能比較</a>
+      </nav>
+      <div class="hero-layout">
+        <div>
+          <p class="eyebrow">Official AI Updates</p>
+          <h1>AI Signal Board</h1>
+          <p class="lead">
+            公式発表だけを拾い、開発者が見るべき変化だけを短く残す個人用ダッシュボード。
+          </p>
+        </div>
+        <aside class="summary-panel" aria-label="更新サマリー">
+          <span class="summary-label">最終更新</span>
+          <strong id="news-updated">読み込み中</strong>
+          <span id="news-count">要約済みニュース</span>
+        </aside>
+      </div>
+    </header>
+
+    <main>
+      <section class="section-header" aria-labelledby="today-focus">
+        <div>
+          <p class="eyebrow">Focus</p>
+          <h2 id="today-focus">今回見るところ</h2>
+        </div>
+        <p>
+          GitHub Actionsは更新候補を集めるだけ。ここにはCodexで内容確認と日本語要約を済ませたものだけを載せます。
+        </p>
+      </section>
+
+      <section
+        id="news-list"
+        class="signal-grid"
+        aria-live="polite"
+        aria-label="AI公式アップデート一覧"
+      >
+        <p class="loading-text">ニュースを読み込んでいます。</p>
+      </section>
+
+      <section class="workflow" aria-labelledby="automation-flow">
+        <div>
+          <p class="eyebrow">Automation Flow</p>
+          <h2 id="automation-flow">更新の流れ</h2>
+        </div>
+        <ol>
+          <li>GitHub Actionsが公式フィードを巡回して更新通知を作成</li>
+          <li>Codex起動時に通知から重要な候補を選び、公式URLを確認</li>
+          <li>日本語要約をニュースと機能比較へ反映</li>
+          <li>掲載済みURLと一致する通知を自動で削除</li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>

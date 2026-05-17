@@ -1,0 +1,269 @@
+{
+  "lastUpdated": "2026-05-17",
+  "policy": "official-sources-only",
+  "legend": {
+    "yes": "〇",
+    "partial": "△",
+    "no": "×"
+  },
+  "catalog": [
+    {
+      "name": "モデル/API",
+      "description": "アプリやワークフローからAIモデルを呼び出す基本機能。",
+      "watchPoint": "モデル名、提供状態、価格、レート制限、コンテキスト長を確認する。"
+    },
+    {
+      "name": "エージェント",
+      "description": "複数ステップの作業、ツール呼び出し、ファイル操作などをAIに任せる機能。",
+      "watchPoint": "権限、実行環境、監査ログ、失敗時の巻き戻しを確認する。"
+    },
+    {
+      "name": "コード支援",
+      "description": "補完、レビュー、Issue整理、リポジトリ作業など開発作業を支援する機能。",
+      "watchPoint": "対象IDE、リポジトリアクセス、組織設定、プレビュー制約を確認する。"
+    },
+    {
+      "name": "音声",
+      "description": "音声入力、音声出力、リアルタイム会話、文字起こしに関係する機能。",
+      "watchPoint": "レイテンシ、対応言語、録音データの扱い、ブラウザ対応を確認する。"
+    },
+    {
+      "name": "画像/動画",
+      "description": "画像生成、画像理解、動画生成、マルチモーダル入力に関係する機能。",
+      "watchPoint": "生成物の利用条件、解像度、透かし、セーフティ制約を確認する。"
+    },
+    {
+      "name": "ツール実行/MCP",
+      "description": "外部ツール、社内API、MCPサーバーなどとAIを接続する機能。",
+      "watchPoint": "認可境界、スコープ、秘密情報の扱い、実行ログを確認する。"
+    },
+    {
+      "name": "管理/セキュリティ",
+      "description": "組織管理、監査、データ保持、セキュリティアドバイザリに関係する機能。",
+      "watchPoint": "SSO、監査ログ、データ保持、依存パッケージの安全性を確認する。"
+    }
+  ],
+  "matrix": {
+    "capabilities": [
+      "モデル/API",
+      "エージェント",
+      "コード支援",
+      "音声",
+      "画像/動画",
+      "ツール実行/MCP",
+      "管理/セキュリティ"
+    ],
+    "providers": [
+      {
+        "provider": "OpenAI",
+        "status": "stable",
+        "sourceUrl": "https://openai.com/index/",
+        "values": {
+          "モデル/API": {
+            "level": "yes",
+            "note": "APIと主要モデル提供あり"
+          },
+          "エージェント": {
+            "level": "partial",
+            "note": "Codexなど用途別に拡張中"
+          },
+          "コード支援": {
+            "level": "partial",
+            "note": "Codex中心"
+          },
+          "音声": {
+            "level": "yes",
+            "note": "音声系機能あり"
+          },
+          "画像/動画": {
+            "level": "yes",
+            "note": "画像/動画系の公式発表あり"
+          },
+          "ツール実行/MCP": {
+            "level": "partial",
+            "note": "用途により確認"
+          },
+          "管理/セキュリティ": {
+            "level": "yes",
+            "note": "公式セキュリティ情報あり"
+          }
+        }
+      },
+      {
+        "provider": "Anthropic",
+        "status": "stable",
+        "sourceUrl": "https://www.anthropic.com/news",
+        "values": {
+          "モデル/API": {
+            "level": "yes",
+            "note": "Claude API/モデル提供あり"
+          },
+          "エージェント": {
+            "level": "yes",
+            "note": "ツール利用や長時間作業に注力"
+          },
+          "コード支援": {
+            "level": "partial",
+            "note": "Claude Codeなど"
+          },
+          "音声": {
+            "level": "partial",
+            "note": "公式状況を都度確認"
+          },
+          "画像/動画": {
+            "level": "partial",
+            "note": "画像理解中心"
+          },
+          "ツール実行/MCP": {
+            "level": "yes",
+            "note": "MCP文脈で強い"
+          },
+          "管理/セキュリティ": {
+            "level": "yes",
+            "note": "企業利用向け管理を確認"
+          }
+        }
+      },
+      {
+        "provider": "Google Gemini",
+        "status": "stable",
+        "sourceUrl": "https://deepmind.google/blog/",
+        "values": {
+          "モデル/API": {
+            "level": "yes",
+            "note": "Gemini系モデル/API"
+          },
+          "エージェント": {
+            "level": "partial",
+            "note": "公式更新を継続確認"
+          },
+          "コード支援": {
+            "level": "partial",
+            "note": "開発者向け支援あり"
+          },
+          "音声": {
+            "level": "yes",
+            "note": "マルチモーダル系を確認"
+          },
+          "画像/動画": {
+            "level": "yes",
+            "note": "画像/動画系の公式発表あり"
+          },
+          "ツール実行/MCP": {
+            "level": "partial",
+            "note": "SDK/連携状況を確認"
+          },
+          "管理/セキュリティ": {
+            "level": "partial",
+            "note": "Google Cloud側も確認"
+          }
+        }
+      },
+      {
+        "provider": "GitHub Copilot",
+        "status": "preview",
+        "sourceUrl": "https://github.blog/changelog/label/copilot/",
+        "values": {
+          "モデル/API": {
+            "level": "partial",
+            "note": "利用者向け抽象化が中心"
+          },
+          "エージェント": {
+            "level": "partial",
+            "note": "Agent系機能を展開中"
+          },
+          "コード支援": {
+            "level": "yes",
+            "note": "主用途"
+          },
+          "音声": {
+            "level": "no",
+            "note": "主要用途ではない"
+          },
+          "画像/動画": {
+            "level": "no",
+            "note": "主要用途ではない"
+          },
+          "ツール実行/MCP": {
+            "level": "partial",
+            "note": "GitHub連携中心"
+          },
+          "管理/セキュリティ": {
+            "level": "yes",
+            "note": "組織管理機能あり"
+          }
+        }
+      },
+      {
+        "provider": "Mistral AI",
+        "status": "stable",
+        "sourceUrl": "https://mistral.ai/news/",
+        "values": {
+          "モデル/API": {
+            "level": "yes",
+            "note": "API/モデル提供あり"
+          },
+          "エージェント": {
+            "level": "partial",
+            "note": "Vibeなどの更新を確認"
+          },
+          "コード支援": {
+            "level": "partial",
+            "note": "エージェント文脈で確認"
+          },
+          "音声": {
+            "level": "no",
+            "note": "主要監視対象外"
+          },
+          "画像/動画": {
+            "level": "partial",
+            "note": "モデル更新次第"
+          },
+          "ツール実行/MCP": {
+            "level": "partial",
+            "note": "SDK/連携を確認"
+          },
+          "管理/セキュリティ": {
+            "level": "yes",
+            "note": "セキュリティアドバイザリあり"
+          }
+        }
+      },
+      {
+        "provider": "Vercel AI",
+        "status": "stable",
+        "sourceUrl": "https://vercel.com/changelog",
+        "values": {
+          "モデル/API": {
+            "level": "partial",
+            "note": "AI Gateway経由"
+          },
+          "エージェント": {
+            "level": "partial",
+            "note": "AI SDK/Workflow文脈"
+          },
+          "コード支援": {
+            "level": "no",
+            "note": "主用途ではない"
+          },
+          "音声": {
+            "level": "partial",
+            "note": "SDK対応状況を確認"
+          },
+          "画像/動画": {
+            "level": "partial",
+            "note": "モデル経由で確認"
+          },
+          "ツール実行/MCP": {
+            "level": "yes",
+            "note": "AI SDKで重要"
+          },
+          "管理/セキュリティ": {
+            "level": "partial",
+            "note": "Vercel側の管理機能を確認"
+          }
+        }
+      }
+    ]
+  }
+}

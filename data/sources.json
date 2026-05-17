@@ -1,0 +1,95 @@
+{
+  "version": 1,
+  "updated": "2026-05-17",
+  "policy": "official-sources-only",
+  "sources": [
+    {
+      "name": "OpenAI News",
+      "source": "OpenAI",
+      "kind": "feed",
+      "url": "https://openai.com/news/rss.xml",
+      "allowedHosts": ["openai.com", "www.openai.com"],
+      "limit": 5
+    },
+    {
+      "name": "OpenAI Index",
+      "source": "OpenAI",
+      "kind": "html",
+      "url": "https://openai.com/index/",
+      "allowedHosts": ["openai.com", "www.openai.com"],
+      "limit": 5,
+      "includePathPrefixes": ["/index/"]
+    },
+    {
+      "name": "Anthropic News",
+      "source": "Anthropic",
+      "kind": "html",
+      "url": "https://www.anthropic.com/news",
+      "allowedHosts": ["anthropic.com", "www.anthropic.com"],
+      "limit": 5,
+      "includePathPrefixes": ["/news/"]
+    },
+    {
+      "name": "Google DeepMind Blog",
+      "source": "Google DeepMind",
+      "kind": "html",
+      "url": "https://deepmind.google/blog/",
+      "allowedHosts": ["deepmind.google"],
+      "limit": 5,
+      "includePathPrefixes": ["/discover/blog/", "/blog/"]
+    },
+    {
+      "name": "GitHub Copilot Changelog",
+      "source": "GitHub",
+      "kind": "feed",
+      "url": "https://github.blog/changelog/label/copilot/feed/",
+      "allowedHosts": ["github.blog"],
+      "limit": 5
+    },
+    {
+      "name": "Mistral AI News",
+      "source": "Mistral AI",
+      "kind": "html",
+      "url": "https://mistral.ai/news/",
+      "allowedHosts": ["mistral.ai", "docs.mistral.ai"],
+      "limit": 5,
+      "includePathPrefixes": ["/news/"]
+    },
+    {
+      "name": "Mistral Security Advisories",
+      "source": "Mistral AI",
+      "kind": "html",
+      "url": "https://docs.mistral.ai/resources/security-advisories",
+      "allowedHosts": ["docs.mistral.ai", "mistral.ai"],
+      "limit": 3,
+      "includePathPrefixes": ["/resources/security-advisories"]
+    },
+    {
+      "name": "Vercel Blog",
+      "source": "Vercel",
+      "kind": "feed",
+      "url": "https://vercel.com/atom",
+      "allowedHosts": ["vercel.com"],
+      "limit": 5,
+      "includeKeywords": ["AI", "SDK", "Gateway", "agent", "model"]
+    },
+    {
+      "name": "Microsoft AI Blog",
+      "source": "Microsoft",
+      "kind": "feed",
+      "url": "https://blogs.microsoft.com/ai/feed/",
+      "allowedHosts": ["blogs.microsoft.com", "microsoft.com"],
+      "limit": 5
+    },
+    {
+      "name": "Azure Updates",
+      "source": "Microsoft",
+      "kind": "html",
+      "url": "https://azure.microsoft.com/en-us/updates/",
+      "allowedHosts": ["azure.microsoft.com", "microsoft.com"],
+      "limit": 5,
+      "includePathPrefixes": ["/en-us/updates/"],
+      "includeKeywords": ["AI", "OpenAI", "Copilot", "model", "agent"]
+    }
+  ]
+}
