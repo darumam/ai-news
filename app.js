@@ -107,6 +107,25 @@
     return article;
   }
 
+  function renderNewsDetails(item) {
+    const details = el("details", "news-details");
+    const summary = el("summary", "", item.title || "無題");
+    details.append(summary);
+    const body = el("div", "news-details-body");
+    body.append(el("p", "", item.summary || ""));
+    body.append(el("p", "small-note", `開発者メモ: ${item.developerNote || "確認事項なし"}`));
+    if (Array.isArray(item.terms) && item.terms.length > 0) {
+      const terms = el("ul", "term-list");
+      item.terms.forEach((term) => {
+        terms.append(el("li", "", `${term.term}: ${term.meaning}`));
+      });
+      body.append(terms);
+    }
+    body.append(link(item.url, "公式"));
+    details.append(body);
+    return details;
+  }
+
   function renderMustReadItem(item, index) {
     const article = el("article", `must-read-card priority-${item.priority || "medium"}`);
     const number = el("span", "must-read-number", String(index + 1));
@@ -117,9 +136,7 @@
       `${item.date || "-"} / ${item.source || "未確認"} / ${groupLabels[item.group] || item.category || "未分類"}`,
     );
     body.append(meta);
-    body.append(el("h3", "", item.title || "無題"));
-    body.append(el("p", "", item.summary || ""));
-    body.append(link(item.url, "公式"));
+    body.append(renderNewsDetails(item));
     article.append(number, body);
     return article;
   }
@@ -132,9 +149,7 @@
     if (item.date) time.dateTime = item.date;
     top.append(time);
     article.append(top);
-    article.append(el("h3", "", item.title || "無題"));
-    article.append(el("p", "", item.summary || ""));
-    article.append(link(item.url, "公式"));
+    article.append(renderNewsDetails(item));
     return article;
   }
 

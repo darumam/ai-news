@@ -250,6 +250,39 @@ h2 {
   box-shadow: var(--shadow);
 }
 
+.news-details summary {
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 900;
+  line-height: 1.45;
+}
+
+.news-details summary:hover {
+  color: var(--accent);
+}
+
+.news-details-body {
+  display: grid;
+  gap: 10px;
+  padding-top: 12px;
+}
+
+.news-details-body p {
+  margin: 0;
+  color: #344054;
+  line-height: 1.7;
+}
+
+.term-list {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: #344054;
+  line-height: 1.6;
+}
+
 .loading-text,
 .empty-state {
   grid-column: 1 / -1;
