@@ -57,11 +57,23 @@
       </section>
 
       <section aria-label="機能面別ニュース">
-        <div class="tab-list" role="tablist" aria-label="ニュース分類">
-          <button class="tab-button active" type="button" data-group="text">テキスト・対話</button>
-          <button class="tab-button" type="button" data-group="media">画像・動画</button>
-          <button class="tab-button" type="button" data-group="dev">開発・API</button>
-          <button class="tab-button" type="button" data-group="business">ビジネス</button>
+        <div class="control-row">
+          <div class="tab-list" role="tablist" aria-label="ニュース分類">
+            <button class="tab-button active" type="button" data-group="all">すべて</button>
+            <button class="tab-button" type="button" data-group="text">テキスト・対話</button>
+            <button class="tab-button" type="button" data-group="media">画像・動画</button>
+            <button class="tab-button" type="button" data-group="dev">開発・API</button>
+            <button class="tab-button" type="button" data-group="business">ビジネス</button>
+          </div>
+          <label class="sort-control">
+            <span>並び替え</span>
+            <select id="group-sort">
+              <option value="newest">新しい順</option>
+              <option value="oldest">古い順</option>
+              <option value="source">提供元順</option>
+              <option value="priority">重要度順</option>
+            </select>
+          </label>
         </div>
         <div id="group-news-list" class="compact-news-list" aria-live="polite">
           <p class="loading-text">分類ニュースを読み込んでいます。</p>
@@ -74,24 +86,21 @@
         </div>
       </section>
 
-      <section class="table-wrap" aria-label="過去ニュース一覧">
-        <table>
-          <thead>
-            <tr>
-              <th>日付</th>
-              <th>提供元</th>
-              <th>分類</th>
-              <th>状態</th>
-              <th>タイトル</th>
-              <th>公式</th>
-            </tr>
-          </thead>
-          <tbody id="news-history">
-            <tr>
-              <td colspan="6">ニュース履歴を読み込んでいます。</td>
-            </tr>
-          </tbody>
-        </table>
+      <section aria-label="過去ニュース一覧">
+        <div class="control-row history-controls">
+          <label class="sort-control">
+            <span>並び替え</span>
+            <select id="history-sort">
+              <option value="newest">新しい順</option>
+              <option value="oldest">古い順</option>
+              <option value="source">提供元順</option>
+              <option value="priority">重要度順</option>
+            </select>
+          </label>
+        </div>
+        <div id="news-history" class="compact-news-list history-list" aria-live="polite">
+          <p class="loading-text">ニュース履歴を読み込んでいます。</p>
+        </div>
       </section>
     </main>
   </body>

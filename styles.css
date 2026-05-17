@@ -185,6 +185,7 @@ h2 {
   border-radius: 8px;
   background: var(--panel);
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .must-read-number {
@@ -214,7 +215,40 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  margin: 0;
+}
+
+.control-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
   margin: 4px 0 16px;
+}
+
+.sort-control {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.sort-control select {
+  min-height: 38px;
+  padding: 0 32px 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--panel);
+  color: var(--text);
+  font: inherit;
+}
+
+.history-controls {
+  justify-content: flex-end;
 }
 
 .tab-button {
@@ -245,9 +279,11 @@ h2 {
 .compact-news-item {
   padding: 18px;
   border: 1px solid var(--line);
+  border-left: 5px solid var(--line);
   border-radius: 8px;
   background: var(--panel);
   box-shadow: var(--shadow);
+  cursor: pointer;
 }
 
 .news-details summary {
@@ -325,6 +361,113 @@ h2 {
 .source {
   color: var(--text);
   font-weight: 800;
+}
+
+.source-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  padding: 0 9px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+}
+
+.source-openai {
+  border-color: #0f766e;
+}
+
+.source-anthropic {
+  border-color: #b45309;
+}
+
+.source-google {
+  border-color: #2563eb;
+}
+
+.source-github {
+  border-color: #6b7280;
+}
+
+.source-mistral {
+  border-color: #7c3aed;
+}
+
+.source-vercel {
+  border-color: #111827;
+}
+
+.source-microsoft {
+  border-color: #15803d;
+}
+
+.must-read-card.source-openai,
+.compact-news-item.source-openai {
+  border-left-color: #0f766e;
+}
+
+.must-read-card.source-anthropic,
+.compact-news-item.source-anthropic {
+  border-left-color: #b45309;
+}
+
+.must-read-card.source-google,
+.compact-news-item.source-google {
+  border-left-color: #2563eb;
+}
+
+.must-read-card.source-github,
+.compact-news-item.source-github {
+  border-left-color: #6b7280;
+}
+
+.must-read-card.source-mistral,
+.compact-news-item.source-mistral {
+  border-left-color: #7c3aed;
+}
+
+.must-read-card.source-vercel,
+.compact-news-item.source-vercel {
+  border-left-color: #111827;
+}
+
+.must-read-card.source-microsoft,
+.compact-news-item.source-microsoft {
+  border-left-color: #15803d;
+}
+
+.source-pill.source-openai {
+  background: #dff7f3;
+  color: #0f766e;
+}
+
+.source-pill.source-anthropic {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.source-pill.source-google {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.source-pill.source-github {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.source-pill.source-mistral {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.source-pill.source-vercel {
+  background: #111827;
+  color: #ffffff;
+}
+
+.source-pill.source-microsoft {
+  background: #dcfce7;
+  color: #166534;
 }
 
 .title-row {
@@ -564,6 +707,10 @@ tr:last-child td {
 
   .signal-card {
     min-height: auto;
+  }
+
+  .compact-news-list {
+    grid-template-columns: 1fr;
   }
 
   .feature-grid {

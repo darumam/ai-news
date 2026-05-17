@@ -22,6 +22,22 @@
     business: "ビジネス",
   };
 
+  const sourceClasses = {
+    OpenAI: "source-openai",
+    Anthropic: "source-anthropic",
+    "Google Gemini": "source-google",
+    GitHub: "source-github",
+    "Mistral AI": "source-mistral",
+    Vercel: "source-vercel",
+    "Microsoft AI": "source-microsoft",
+  };
+
+  const priorityRank = {
+    high: 3,
+    medium: 2,
+    low: 1,
+  };
+
   function el(tag, className, text) {
     const node = document.createElement(tag);
     if (className) node.className = className;
@@ -68,10 +84,50 @@
     target.replaceChildren(el("p", "empty-state", message));
   }
 
+  function sourceClass(source) {
+    return sourceClasses[source] || "source-default";
+  }
+
+  function sourcePill(source) {
+    return el("span", `source source-pill ${sourceClass(source)}`, source || "未確認");
+  }
+
+  function makeCardToggle(card) {
+    card.addEventListener("click", (event) => {
+      if (event.target.closest("a")) return;
+      if (event.target.closest("summary")) return;
+      const details = card.querySelector("details");
+      if (!details) return;
+      details.open = !details.open;
+    });
+  }
+
+  function sortItems(items, mode) {
+    const sorted = [...items];
+    if (mode === "oldest") {
+      return sorted.sort((a, b) => (a.date || "").localeCompare(b.date || ""));
+    }
+    if (mode === "source") {
+      return sorted.sort(
+        (a, b) =>
+          (a.source || "").localeCompare(b.source || "", "ja") ||
+          (b.date || "").localeCompare(a.date || ""),
+      );
+    }
+    if (mode === "priority") {
+      return sorted.sort(
+        (a, b) =>
+          (priorityRank[b.priority] || 0) - (priorityRank[a.priority] || 0) ||
+          (b.date || "").localeCompare(a.date || ""),
+      );
+    }
+    return sorted.sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+  }
+
   function renderNewsCard(item) {
     const article = el("article", `signal-card priority-${item.priority || "medium"}`);
     const top = el("div", "card-topline");
-    top.append(el("span", "source", item.source || "未確認"));
+    top.append(sourcePill(item.source));
     const time = el("time", "", item.date || "");
     if (item.date) time.dateTime = item.date;
     top.append(time);
@@ -127,7 +183,10 @@
   }
 
   function renderMustReadItem(item, index) {
-    const article = el("article", `must-read-card priority-${item.priority || "medium"}`);
+    const article = el(
+      "article",
+      `must-read-card priority-${item.priority || "medium"} ${sourceClass(item.source)}`,
+    );
     const number = el("span", "must-read-number", String(index + 1));
     const body = el("div", "");
     const meta = el(
@@ -138,54 +197,51 @@
     body.append(meta);
     body.append(renderNewsDetails(item));
     article.append(number, body);
+    makeCardToggle(article);
     return article;
   }
 
   function renderCompactNewsItem(item) {
-    const article = el("article", "compact-news-item");
+    const article = el("article", `compact-news-item ${sourceClass(item.source)}`);
     const top = el("div", "card-topline");
-    top.append(el("span", "source", item.source || "未確認"));
+    top.append(sourcePill(item.source));
     const time = el("time", "", item.date || "");
     if (item.date) time.dateTime = item.date;
     top.append(time);
     article.append(top);
     article.append(renderNewsDetails(item));
+    makeCardToggle(article);
     return article;
-  }
-
-  function renderHistoryRow(item) {
-    const tr = document.createElement("tr");
-    const status = el("td", "");
-    status.append(badge(item.status || "unknown"));
-    [item.date, item.source, item.category].forEach((text) => tr.append(el("td", "", text || "-")));
-    tr.append(status);
-    tr.append(el("td", "", item.title || "無題"));
-    const source = el("td", "");
-    source.append(link(item.url, "公式"));
-    tr.append(source);
-    return tr;
   }
 
   async function renderNews() {
     const mustRead = document.getElementById("must-read-list");
     const groupList = document.getElementById("group-news-list");
     const history = document.getElementById("news-history");
+    const groupSort = document.getElementById("group-sort");
+    const historySort = document.getElementById("history-sort");
     try {
       const data = await loadJson("data/news.json");
-      const items = [...(data.items || [])].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      const items = sortItems(data.items || [], "newest");
       document.getElementById("news-updated").textContent = data.lastUpdated || "-";
       document.getElementById("news-count").textContent =
         `${items.length}件 / 公式ソースのみ`;
       const picked = items.filter((item) => item.mustRead).slice(0, 5);
       mustRead.replaceChildren(...picked.map(renderMustReadItem));
 
-      function showGroup(group) {
-        const groupItems = items.filter((item) => item.group === group).slice(0, 8);
+      function showGroup(group, mode = groupSort?.value || "newest") {
+        const base = group === "all" ? items : items.filter((item) => item.group === group);
+        const groupItems = sortItems(base, mode);
         if (groupItems.length === 0) {
           renderError(groupList, "この分類のニュースはありません。");
           return;
         }
         groupList.replaceChildren(...groupItems.map(renderCompactNewsItem));
+      }
+
+      function showHistory(mode = historySort?.value || "newest") {
+        if (!history) return;
+        history.replaceChildren(...sortItems(items, mode).map(renderCompactNewsItem));
       }
 
       document.querySelectorAll(".tab-button").forEach((button) => {
@@ -195,11 +251,14 @@
           showGroup(button.dataset.group);
         });
       });
-      showGroup("text");
+      groupSort?.addEventListener("change", () => {
+        const active = document.querySelector(".tab-button.active");
+        showGroup(active?.dataset.group || "all");
+      });
+      historySort?.addEventListener("change", () => showHistory());
+      showGroup("all");
 
-      if (history) {
-        history.replaceChildren(...items.map(renderHistoryRow));
-      }
+      showHistory();
     } catch (_) {
       renderError(mustRead, "ニュースを読み込めませんでした。GitHub Pages上で再確認してください。");
     }
