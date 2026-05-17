@@ -20,12 +20,11 @@
       <nav class="site-nav" aria-label="メインナビゲーション">
         <a class="active" href="index.html">ニュース</a>
         <a href="feature-news.html">機能追加</a>
-        <a href="inbox.html">更新通知</a>
         <a href="compare.html">機能比較</a>
       </nav>
       <div class="hero-layout">
         <div>
-          <h1>AIシグナルボード</h1>
+          <h1>1分AIトレンド</h1>
         </div>
         <aside class="summary-panel" aria-label="更新サマリー">
           <span class="summary-label">最終更新</span>
@@ -38,17 +37,35 @@
     <main>
       <section class="section-header" aria-labelledby="today-focus">
         <div>
-          <h2 id="today-focus">最新ニュース</h2>
+          <h2 id="today-focus">これだけ読め</h2>
         </div>
       </section>
 
       <section
-        id="news-list"
-        class="signal-grid"
+        id="must-read-list"
+        class="must-read-list"
         aria-live="polite"
-        aria-label="AI公式アップデート一覧"
+        aria-label="超重要ニュース一覧"
       >
         <p class="loading-text">ニュースを読み込んでいます。</p>
+      </section>
+
+      <section class="section-header compact-section" aria-labelledby="trend-tabs-title">
+        <div>
+          <h2 id="trend-tabs-title">機能面タブ</h2>
+        </div>
+      </section>
+
+      <section aria-label="機能面別ニュース">
+        <div class="tab-list" role="tablist" aria-label="ニュース分類">
+          <button class="tab-button active" type="button" data-group="text">テキスト・対話</button>
+          <button class="tab-button" type="button" data-group="media">画像・動画</button>
+          <button class="tab-button" type="button" data-group="dev">開発・API</button>
+          <button class="tab-button" type="button" data-group="business">ビジネス</button>
+        </div>
+        <div id="group-news-list" class="compact-news-list" aria-live="polite">
+          <p class="loading-text">分類ニュースを読み込んでいます。</p>
+        </div>
       </section>
 
       <section class="section-header compact-section" aria-labelledby="history-title">

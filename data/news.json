@@ -4,14 +4,106 @@
   "items": [
     {
       "source": "OpenAI",
+      "date": "2026-05-16",
+      "category": "社会実装",
+      "group": "business",
+      "type": "business",
+      "priority": "medium",
+      "status": "stable",
+      "title": "マルタ全市民にChatGPT Plusを提供する国家連携",
+      "summary": "OpenAIとマルタ政府は、AI学習コースの修了者にChatGPT Plusを1年間提供する国家規模の連携を発表。",
+      "developerNote": "政府・教育機関向けのAI普及モデルとして、認証、教育、利用権付与の組み合わせを参考にできる。",
+      "terms": [
+        {
+          "term": "AIリテラシー",
+          "meaning": "AIの得意不得意、使い方、注意点を理解して使う力。"
+        }
+      ],
+      "url": "https://openai.com/index/malta-chatgpt-plus-partnership/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-15",
+      "category": "企業向けAI",
+      "group": "business",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "DatabricksがGPT-5.5を企業エージェント業務に導入",
+      "summary": "Databricksは、複雑な企業文書タスク向け評価でGPT-5.5がGPT-5.4より誤りを46%減らしたと説明。",
+      "developerNote": "スキャンPDFや長文文書を扱う業務エージェントでは、検索だけでなく解析と根拠づけの性能を見る必要がある。",
+      "terms": [
+        {
+          "term": "エージェント",
+          "meaning": "複数の手順やツール利用を自律的に進めるAIの使い方。"
+        },
+        {
+          "term": "ベンチマーク",
+          "meaning": "性能を比べるための評価テスト。"
+        }
+      ],
+      "url": "https://openai.com/index/databricks/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-15",
+      "category": "個人向け機能",
+      "group": "business",
+      "type": "feature",
+      "priority": "medium",
+      "status": "preview",
+      "title": "ChatGPTに個人金融プレビューを追加",
+      "summary": "OpenAIは米国のProユーザー向けに、金融口座を接続して支出や目標を相談できるChatGPTの個人金融機能をプレビュー公開。",
+      "developerNote": "金融データを扱うAI機能では、接続先、保存情報、専門助言ではないことの明示が重要になる。",
+      "terms": [
+        {
+          "term": "プレビュー",
+          "meaning": "正式提供前に一部ユーザーへ試験提供する段階。"
+        },
+        {
+          "term": "Plaid",
+          "meaning": "銀行や金融口座との接続に使われる外部サービス。"
+        }
+      ],
+      "url": "https://openai.com/index/personal-finance-chatgpt/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-14",
+      "category": "開発ツール",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Codexをスマホから操作できるように",
+      "summary": "OpenAIはChatGPTモバイルアプリでCodexを操作できるプレビューを発表。外出先から承認、確認、方針変更ができる。",
+      "developerNote": "長時間実行する開発エージェントでは、PC前にいない時間の承認や差分確認が運用上の差になる。",
+      "terms": [
+        {
+          "term": "リレー層",
+          "meaning": "PCを直接公開せず、別端末から状態を同期する中継の仕組み。"
+        },
+        {
+          "term": "Remote SSH",
+          "meaning": "別の開発用マシンへ安全に接続して作業する仕組み。"
+        }
+      ],
+      "url": "https://openai.com/index/work-with-codex-from-anywhere/"
+    },
+    {
+      "source": "OpenAI",
       "date": "2026-05-13",
       "category": "セキュリティ",
+      "group": "dev",
       "type": "security",
       "priority": "high",
+      "mustRead": true,
       "status": "stable",
       "title": "TanStack npm供給網攻撃への対応",
       "summary": "OpenAIはTanStack関連の供給網攻撃を受け、macOSアプリの証明書更新と旧バージョンのサポート終了予定を案内。",
-      "developerNote": "OpenAI/ChatGPT/Codex系アプリは公式配布元から更新。社内端末のバージョン棚卸し候補。",
+      "developerNote": "OpenAI、ChatGPT、Codex系アプリは公式配布元から更新。社内端末のバージョン棚卸し候補。",
       "terms": [
         {
           "term": "供給網攻撃",
@@ -25,10 +117,54 @@
       "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/"
     },
     {
+      "source": "Vercel",
+      "date": "2026-05-15",
+      "category": "AI基盤",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AI Gatewayで提供元をコスト・速度順に並べ替え",
+      "summary": "VercelはAI Gatewayで、モデル提供元をコスト、初回応答速度、生成速度で並べ替える指定を追加。",
+      "developerNote": "複数プロバイダー構成では、費用重視、低遅延重視、長文生成重視をリクエスト単位で切り替えられる。",
+      "terms": [
+        {
+          "term": "AI Gateway",
+          "meaning": "複数のAIモデル提供元を1つの入口から使うための中継サービス。"
+        },
+        {
+          "term": "初回応答速度",
+          "meaning": "生成が始まるまでの待ち時間。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-15",
+      "category": "コード支援",
+      "group": "dev",
+      "type": "feature",
+      "priority": "medium",
+      "status": "preview",
+      "title": "Copilot Memoryが個人の好みを記憶",
+      "summary": "GitHubはCopilot Memoryで、ProとPro+ユーザー向けに個人のコミット形式やPRの好みを保存できる早期アクセスを開始。",
+      "developerNote": "リポジトリ単位ではなくユーザー単位の記憶なので、複数リポジトリで一貫した作業スタイルを反映できる。",
+      "terms": [
+        {
+          "term": "早期アクセス",
+          "meaning": "正式展開前に一部ユーザーへ先行提供する段階。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users/"
+    },
+    {
       "source": "Anthropic",
       "date": "2026-05-14",
       "category": "社会実装",
-      "type": "feature",
+      "group": "business",
+      "type": "business",
       "priority": "medium",
       "status": "stable",
       "title": "Gates Foundationとの2億ドル規模パートナーシップ",
@@ -43,31 +179,33 @@
       "url": "https://www.anthropic.com/news/gates-foundation-partnership"
     },
     {
-      "source": "Mistral AI",
-      "date": "2026-05-12",
-      "category": "セキュリティ",
-      "type": "security",
-      "priority": "high",
+      "source": "GitHub",
+      "date": "2026-05-14",
+      "category": "管理機能",
+      "group": "business",
+      "type": "feature",
+      "priority": "medium",
       "status": "stable",
-      "title": "Mistral SDK関連のセキュリティアドバイザリ",
-      "summary": "MistralはTanStack関連インシデントの影響で、一部npm/PyPIパッケージに不正な公開があったと説明。",
-      "developerNote": "該当時間帯にMistral SDKを導入・更新した環境は依存関係とロックファイルを確認。",
+      "title": "チーム別Copilot利用指標をAPIで取得可能に",
+      "summary": "GitHubはCopilot利用指標APIにチーム所属レポートを追加し、チーム別の利用状況を集計できるようにした。",
+      "developerNote": "Copilot導入後の利用差、活用チーム、支援が必要なチームをREST APIで分析しやすくなる。",
       "terms": [
         {
-          "term": "SDK",
-          "meaning": "開発者がサービスを使うための公式開発キット。"
+          "term": "REST API",
+          "meaning": "外部プログラムからサービスの情報を取得・操作するための一般的なAPI形式。"
         },
         {
-          "term": "PyPI",
-          "meaning": "Pythonの部品を配布する仕組み。"
+          "term": "NDJSON",
+          "meaning": "1行ごとにJSONを書く、ログや大量データ向けの形式。"
         }
       ],
-      "url": "https://docs.mistral.ai/resources/security-advisories"
+      "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api/"
     },
     {
       "source": "GitHub",
       "date": "2026-05-14",
       "category": "開発ツール",
+      "group": "dev",
       "type": "feature",
       "priority": "medium",
       "status": "preview",
@@ -85,6 +223,190 @@
         }
       ],
       "url": "https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-14",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "medium",
+      "status": "stable",
+      "title": "Copilotクラウドエージェントがモデル自動選択に対応",
+      "summary": "GitHubはCopilotクラウドエージェントで、利用可能なモデルから状態や性能に応じて自動選択する機能を追加。",
+      "developerNote": "手動でモデルを選ぶより、稼働状況や性能を見た自動選択で長時間タスクの安定性を狙える。",
+      "terms": [
+        {
+          "term": "クラウドエージェント",
+          "meaning": "手元のPCではなくクラウド上の開発環境で作業するAIエージェント。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-13",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "status": "preview",
+      "title": "REST APIからCopilotクラウドエージェントを開始可能に",
+      "summary": "GitHubはCopilot BusinessとEnterprise向けに、REST APIからクラウドエージェントのタスクを開始できる公開プレビューを開始。",
+      "developerNote": "社内ポータルや定期処理から、複数リポジトリの移行、修正、リリース準備を自動発火できる。",
+      "terms": [
+        {
+          "term": "公開プレビュー",
+          "meaning": "一般の対象ユーザーが試せるが、正式版ではない提供状態。"
+        },
+        {
+          "term": "OAuthトークン",
+          "meaning": "外部アプリに限定的な操作権限を渡すための認証情報。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api/"
+    },
+    {
+      "source": "Mistral AI",
+      "date": "2026-04-29",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Vibeにリモートコーディングエージェントを追加",
+      "summary": "MistralはMistral Medium 3.5、Vibeのクラウド型コーディングエージェント、Le ChatのWorkモードを発表。",
+      "developerNote": "CLIやチャットからクラウド実行の開発タスクを並列に走らせ、完了後にPRで確認する流れが強まる。",
+      "terms": [
+        {
+          "term": "Workモード",
+          "meaning": "複数ツールを使いながら調査や作業を進めるLe Chatのエージェント機能。"
+        },
+        {
+          "term": "サンドボックス",
+          "meaning": "安全のために隔離された実行環境。"
+        }
+      ],
+      "url": "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-04-17",
+      "category": "デザイン生成",
+      "group": "media",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Claude Designを研究プレビューで公開",
+      "summary": "AnthropicはClaude Designを公開。デザイン、プロトタイプ、スライド、資料をClaudeと共同作成できる。",
+      "developerNote": "デザインシステムの読み込み、CanvaやPPTXへの出力、Claude Codeへの引き継ぎが実装工程に直結する。",
+      "terms": [
+        {
+          "term": "研究プレビュー",
+          "meaning": "正式提供前に、実利用から学ぶ目的で限定公開する段階。"
+        },
+        {
+          "term": "デザインシステム",
+          "meaning": "色、文字、部品、余白などを統一するための設計ルール集。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/claude-design-anthropic-labs"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-04-16",
+      "category": "モデル",
+      "group": "text",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Claude Opus 4.7を正式提供",
+      "summary": "AnthropicはClaude Opus 4.7を正式提供。高度なソフトウェア開発、長時間タスク、画像理解の改善を強調。",
+      "developerNote": "難しい設計、長い修正、画像を含む仕様確認に使うモデル候補として再評価したい。",
+      "terms": [
+        {
+          "term": "長時間タスク",
+          "meaning": "短い応答ではなく、調査、修正、検証をまたいで進む作業。"
+        },
+        {
+          "term": "Vertex AI",
+          "meaning": "Google CloudでAIモデルを使うための基盤。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/claude-opus-4-7"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-07",
+      "category": "音声API",
+      "group": "media",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "APIに新しいリアルタイム音声モデルを追加",
+      "summary": "OpenAIは推論、翻訳、文字起こしに対応するリアルタイム音声モデルをAPIに追加した。",
+      "developerNote": "音声UIでは、翻訳、文字起こし、ツール実行、長い会話文脈をまとめて設計できるようになる。",
+      "terms": [
+        {
+          "term": "リアルタイム音声",
+          "meaning": "話している最中に理解や応答を進める音声処理。"
+        },
+        {
+          "term": "文字起こし",
+          "meaning": "音声をテキストに変換すること。"
+        }
+      ],
+      "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-05-12",
+      "category": "AI基盤",
+      "group": "business",
+      "type": "business",
+      "priority": "medium",
+      "status": "stable",
+      "title": "AI Gatewayの本番利用データを公開",
+      "summary": "VercelはAI Gatewayの本番トラフィック分析を公開。エージェント型ワークロードが全トークン量の59%を占めると説明。",
+      "developerNote": "実運用では単一モデル固定より、複数モデルと複数提供元を使い分ける前提が強くなっている。",
+      "terms": [
+        {
+          "term": "トークン",
+          "meaning": "AIが文章を処理するときの細かい単位。利用量や料金の基準になる。"
+        },
+        {
+          "term": "本番ワークロード",
+          "meaning": "実際のユーザーや業務で動いている処理。"
+        }
+      ],
+      "url": "https://vercel.com/blog/ai-gateway-production-index"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2025-11-12",
+      "category": "モデル",
+      "group": "text",
+      "type": "model",
+      "priority": "medium",
+      "status": "stable",
+      "title": "GPT-5.1をChatGPTに展開",
+      "summary": "OpenAIはGPT-5.1 InstantとGPT-5.1 Thinkingを発表。会話しやすさ、指示追従、思考時間の調整を改善。",
+      "developerNote": "最新ニュースではないが、モデル比較の基準として残しておく価値がある。",
+      "terms": [
+        {
+          "term": "思考時間",
+          "meaning": "AIが複雑な問題にどれだけ内部処理を使うかの度合い。"
+        },
+        {
+          "term": "指示追従",
+          "meaning": "ユーザーの条件や形式指定を守って答える能力。"
+        }
+      ],
+      "url": "https://openai.com/index/gpt-5-1/"
     }
   ]
 }
