@@ -352,7 +352,7 @@ code {
 }
 
 .feature-card {
-  min-height: 190px;
+  min-height: 78px;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -432,17 +432,9 @@ td {
 
 .capability-mark {
   display: block;
-  margin-bottom: 6px;
   font-size: 1.65rem;
   font-weight: 900;
   line-height: 1;
-}
-
-.capability-note {
-  display: block;
-  color: var(--muted);
-  font-size: 0.78rem;
-  line-height: 1.45;
 }
 
 .capability-yes .capability-mark {

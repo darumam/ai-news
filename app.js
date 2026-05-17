@@ -2,11 +2,11 @@
   const page = document.body.dataset.page;
 
   const statusLabels = {
-    stable: "Stable",
-    beta: "Beta",
-    preview: "Preview",
-    deprecated: "Deprecated",
-    unknown: "Unknown",
+    stable: "正式",
+    beta: "ベータ",
+    preview: "プレビュー",
+    deprecated: "終了予定",
+    unknown: "未確認",
   };
 
   const levelLabels = {
@@ -64,13 +64,13 @@
   function renderNewsCard(item) {
     const article = el("article", `signal-card priority-${item.priority || "medium"}`);
     const top = el("div", "card-topline");
-    top.append(el("span", "source", item.source || "Unknown"));
+    top.append(el("span", "source", item.source || "未確認"));
     const time = el("time", "", item.date || "");
     if (item.date) time.dateTime = item.date;
     top.append(time);
 
     const titleRow = el("div", "title-row");
-    titleRow.append(el("h2", "", item.title || "Untitled"));
+    titleRow.append(el("h2", "", item.title || "無題"));
     titleRow.append(badge(item.status || "stable"));
 
     const body = el("p", "", item.summary || "");
@@ -83,33 +83,83 @@
     memo.append(el("dd", "", item.developerNote || "確認事項なし"));
     dl.append(category, memo);
 
+    if (Array.isArray(item.terms) && item.terms.length > 0) {
+      const terms = el("div", "");
+      terms.append(el("dt", "", "用語解説"));
+      terms.append(
+        el(
+          "dd",
+          "",
+          item.terms.map((term) => `${term.term}: ${term.meaning}`).join(" / "),
+        ),
+      );
+      dl.append(terms);
+    }
+
     article.append(top, titleRow, body, dl, link(item.url, "公式ソース"));
     return article;
   }
 
+  function renderHistoryRow(item) {
+    const tr = document.createElement("tr");
+    const status = el("td", "");
+    status.append(badge(item.status || "unknown"));
+    [item.date, item.source, item.category].forEach((text) => tr.append(el("td", "", text || "-")));
+    tr.append(status);
+    tr.append(el("td", "", item.title || "無題"));
+    const source = el("td", "");
+    source.append(link(item.url, "公式"));
+    tr.append(source);
+    return tr;
+  }
+
   async function renderNews() {
     const list = document.getElementById("news-list");
+    const history = document.getElementById("news-history");
     try {
       const data = await loadJson("data/news.json");
+      const items = [...(data.items || [])].sort((a, b) => (b.date || "").localeCompare(a.date || ""));
       document.getElementById("news-updated").textContent = data.lastUpdated || "-";
       document.getElementById("news-count").textContent =
-        `${data.items.length}件 / 公式ソースのみ`;
-      list.replaceChildren(...data.items.map(renderNewsCard));
+        `${items.length}件 / 公式ソースのみ`;
+      list.replaceChildren(...items.map(renderNewsCard));
+      if (history) {
+        history.replaceChildren(...items.map(renderHistoryRow));
+      }
     } catch (_) {
       renderError(list, "ニュースを読み込めませんでした。GitHub Pages上で再確認してください。");
+    }
+  }
+
+  async function renderFeatureNews() {
+    const list = document.getElementById("feature-news-list");
+    try {
+      const data = await loadJson("data/news.json");
+      const items = [...(data.items || [])]
+        .filter((item) => item.type === "feature")
+        .sort((a, b) => (b.date || "").localeCompare(a.date || ""));
+      document.getElementById("feature-news-updated").textContent = data.lastUpdated || "-";
+      document.getElementById("feature-news-count").textContent = `${items.length}件`;
+      if (items.length === 0) {
+        renderError(list, "機能追加ニュースはありません。");
+        return;
+      }
+      list.replaceChildren(...items.map(renderNewsCard));
+    } catch (_) {
+      renderError(list, "機能追加ニュースを読み込めませんでした。");
     }
   }
 
   function renderInboxItem(item) {
     const article = el("article", "inbox-item");
     const meta = el("div", "card-topline");
-    meta.append(el("span", "source", item.source || "Unknown"));
+    meta.append(el("span", "source", item.source || "未確認"));
     const time = el("time", "", item.date || "");
     if (item.date) time.dateTime = item.date;
     meta.append(time);
 
     const titleRow = el("div", "title-row");
-    titleRow.append(el("h2", "", item.title || "Untitled"));
+    titleRow.append(el("h2", "", item.title || "無題"));
     titleRow.append(badge(item.statusHint || "unknown"));
 
     const discovered = el(
@@ -141,10 +191,7 @@
 
   function renderCatalogCard(item) {
     const article = el("article", "feature-card");
-    article.append(el("h3", "", item.name || "Untitled"));
-    article.append(el("p", "", item.description || ""));
-    const note = el("p", "small-note", item.watchPoint ? `確認: ${item.watchPoint}` : "");
-    article.append(note);
+    article.append(el("h3", "", item.name || "無題"));
     return article;
   }
 
@@ -152,16 +199,13 @@
     const level = value?.level || "no";
     const td = el("td", `capability-cell capability-${level}`);
     td.append(el("span", "capability-mark", levelLabels[level] || "?"));
-    if (value?.note) {
-      td.append(el("span", "capability-note", value.note));
-    }
     return td;
   }
 
   function renderProviderRow(provider, capabilities) {
     const tr = document.createElement("tr");
     const name = el("td", "provider-cell");
-    name.append(el("strong", "", provider.provider || "Unknown"));
+    name.append(el("strong", "", provider.provider || "未確認"));
     name.append(badge(provider.status || "unknown"));
     name.append(link(provider.sourceUrl, "公式"));
     tr.append(name);
@@ -199,6 +243,7 @@
   }
 
   if (page === "news") renderNews();
+  if (page === "feature-news") renderFeatureNews();
   if (page === "inbox") renderInbox();
   if (page === "compare") renderFeatures();
 })();

@@ -6,44 +6,84 @@
       "source": "OpenAI",
       "date": "2026-05-13",
       "category": "セキュリティ",
+      "type": "security",
       "priority": "high",
       "status": "stable",
       "title": "TanStack npm供給網攻撃への対応",
       "summary": "OpenAIはTanStack関連の供給網攻撃を受け、macOSアプリの証明書更新と旧バージョンのサポート終了予定を案内。",
       "developerNote": "OpenAI/ChatGPT/Codex系アプリは公式配布元から更新。社内端末のバージョン棚卸し候補。",
+      "terms": [
+        {
+          "term": "供給網攻撃",
+          "meaning": "利用している外部ライブラリや配布経路を狙う攻撃。"
+        },
+        {
+          "term": "npm",
+          "meaning": "JavaScriptの部品を配布する仕組み。"
+        }
+      ],
       "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/"
     },
     {
       "source": "Anthropic",
       "date": "2026-05-14",
       "category": "社会実装",
+      "type": "feature",
       "priority": "medium",
       "status": "stable",
       "title": "Gates Foundationとの2億ドル規模パートナーシップ",
       "summary": "AnthropicはGates Foundationと連携し、健康、教育、経済的流動性などの領域にClaude利用枠と技術支援を提供する計画を発表。",
       "developerNote": "公共性の高い領域でのClaude導入事例が増えそう。評価指標や非営利向け支援の動向を継続確認。",
+      "terms": [
+        {
+          "term": "経済的流動性",
+          "meaning": "個人や家庭が収入や社会的立場を上げられる可能性。"
+        }
+      ],
       "url": "https://www.anthropic.com/news/gates-foundation-partnership"
     },
     {
       "source": "Mistral AI",
       "date": "2026-05-12",
       "category": "セキュリティ",
+      "type": "security",
       "priority": "high",
       "status": "stable",
       "title": "Mistral SDK関連のセキュリティアドバイザリ",
       "summary": "MistralはTanStack関連インシデントの影響で、一部npm/PyPIパッケージに不正な公開があったと説明。",
       "developerNote": "該当時間帯にMistral SDKを導入・更新した環境は依存関係とロックファイルを確認。",
+      "terms": [
+        {
+          "term": "SDK",
+          "meaning": "開発者がサービスを使うための公式開発キット。"
+        },
+        {
+          "term": "PyPI",
+          "meaning": "Pythonの部品を配布する仕組み。"
+        }
+      ],
       "url": "https://docs.mistral.ai/resources/security-advisories"
     },
     {
       "source": "GitHub",
       "date": "2026-05-14",
       "category": "開発ツール",
+      "type": "feature",
       "priority": "medium",
       "status": "preview",
-      "title": "GitHub Copilot appのTechnical Preview",
-      "summary": "GitHubはCopilot appのTechnical Previewを公開。CopilotがIDE外の作業導線にも広がる流れとして見ておきたい更新。",
+      "title": "GitHub Copilotアプリの技術検証版",
+      "summary": "GitHubはCopilotアプリの技術検証版を公開。Copilotが統合開発環境の外にも広がる流れとして見ておきたい更新。",
       "developerNote": "コードレビュー、Issue整理、リポジトリ作業の支援範囲が広がる可能性。導入条件と制約を確認。",
+      "terms": [
+        {
+          "term": "技術検証版",
+          "meaning": "正式版の前に試せる技術検証版。仕様変更や制限があり得る。"
+        },
+        {
+          "term": "統合開発環境",
+          "meaning": "コードを書くための統合開発環境。"
+        }
+      ],
       "url": "https://github.blog/changelog/2026-05-14-github-copilot-app-is-now-available-in-technical-preview/"
     }
   ]

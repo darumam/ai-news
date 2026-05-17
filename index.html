@@ -11,7 +11,7 @@
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
     />
-    <title>AI Signal Board | ニュース</title>
+    <title>AIシグナルボード | ニュース</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
@@ -19,16 +19,13 @@
     <header class="site-header">
       <nav class="site-nav" aria-label="メインナビゲーション">
         <a class="active" href="index.html">ニュース</a>
+        <a href="feature-news.html">機能追加</a>
         <a href="inbox.html">更新通知</a>
         <a href="compare.html">機能比較</a>
       </nav>
       <div class="hero-layout">
         <div>
-          <p class="eyebrow">Official AI Updates</p>
-          <h1>AI Signal Board</h1>
-          <p class="lead">
-            公式発表だけを拾い、開発者が見るべき変化だけを短く残す個人用ダッシュボード。
-          </p>
+          <h1>AIシグナルボード</h1>
         </div>
         <aside class="summary-panel" aria-label="更新サマリー">
           <span class="summary-label">最終更新</span>
@@ -41,12 +38,8 @@
     <main>
       <section class="section-header" aria-labelledby="today-focus">
         <div>
-          <p class="eyebrow">Focus</p>
-          <h2 id="today-focus">今回見るところ</h2>
+          <h2 id="today-focus">最新ニュース</h2>
         </div>
-        <p>
-          GitHub Actionsは更新候補を集めるだけ。ここにはCodexで内容確認と日本語要約を済ませたものだけを載せます。
-        </p>
       </section>
 
       <section
@@ -58,17 +51,30 @@
         <p class="loading-text">ニュースを読み込んでいます。</p>
       </section>
 
-      <section class="workflow" aria-labelledby="automation-flow">
+      <section class="section-header compact-section" aria-labelledby="history-title">
         <div>
-          <p class="eyebrow">Automation Flow</p>
-          <h2 id="automation-flow">更新の流れ</h2>
+          <h2 id="history-title">過去ニュース</h2>
         </div>
-        <ol>
-          <li>GitHub Actionsが公式フィードを巡回して更新通知を作成</li>
-          <li>Codex起動時に通知から重要な候補を選び、公式URLを確認</li>
-          <li>日本語要約をニュースと機能比較へ反映</li>
-          <li>掲載済みURLと一致する通知を自動で削除</li>
-        </ol>
+      </section>
+
+      <section class="table-wrap" aria-label="過去ニュース一覧">
+        <table>
+          <thead>
+            <tr>
+              <th>日付</th>
+              <th>提供元</th>
+              <th>分類</th>
+              <th>状態</th>
+              <th>タイトル</th>
+              <th>公式</th>
+            </tr>
+          </thead>
+          <tbody id="news-history">
+            <tr>
+              <td colspan="6">ニュース履歴を読み込んでいます。</td>
+            </tr>
+          </tbody>
+        </table>
       </section>
     </main>
   </body>

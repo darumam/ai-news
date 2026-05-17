@@ -5,44 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="GitHub Actionsが公式ソース巡回で見つけた、未要約のAI更新通知。"
+      content="公式ソースにもとづくAI機能追加ニュース。"
     />
     <meta
       http-equiv="Content-Security-Policy"
       content="default-src 'self'; style-src 'self'; img-src 'self' data:; base-uri 'none'; frame-ancestors 'none'; form-action 'none'"
     />
-    <title>AIシグナルボード | 更新通知</title>
+    <title>AIシグナルボード | 機能追加</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
-  <body data-page="inbox">
+  <body data-page="feature-news">
     <header class="site-header">
       <nav class="site-nav" aria-label="メインナビゲーション">
         <a href="index.html">ニュース</a>
-        <a href="feature-news.html">機能追加</a>
-        <a class="active" href="inbox.html">更新通知</a>
+        <a class="active" href="feature-news.html">機能追加</a>
+        <a href="inbox.html">更新通知</a>
         <a href="compare.html">機能比較</a>
       </nav>
       <div class="hero-layout">
         <div>
-          <h1>更新通知</h1>
+          <h1>機能追加</h1>
         </div>
-        <aside class="summary-panel" aria-label="通知サマリー">
-          <span class="summary-label">未処理</span>
-          <strong id="inbox-count">読み込み中</strong>
-          <span id="inbox-updated">GitHub Actions巡回</span>
+        <aside class="summary-panel" aria-label="機能追加サマリー">
+          <span class="summary-label">最終更新</span>
+          <strong id="feature-news-updated">読み込み中</strong>
+          <span id="feature-news-count">機能追加ニュース</span>
         </aside>
       </div>
     </header>
 
     <main>
       <section
-        id="inbox-list"
-        class="inbox-list"
+        id="feature-news-list"
+        class="signal-grid"
         aria-live="polite"
-        aria-label="未要約の更新通知一覧"
+        aria-label="機能追加ニュース一覧"
       >
-        <p class="loading-text">通知を読み込んでいます。</p>
+        <p class="loading-text">機能追加ニュースを読み込んでいます。</p>
       </section>
     </main>
   </body>
