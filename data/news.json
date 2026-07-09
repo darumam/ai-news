@@ -1,7 +1,1481 @@
 {
-  "lastUpdated": "2026-05-17",
+  "lastUpdated": "2026-07-09",
   "policy": "official-sources-only",
   "items": [
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-08",
+      "category": "エンタープライズ統制",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "CopilotがVS CodeとCLIのOpenTelemetry出力を企業管理に対応",
+      "summary": "GitHub Copilotは、VS CodeのCopilot Chat拡張とCopilot CLIのエージェントホストに対し、企業管理設定でOpenTelemetry出力先を強制できるようにした。OTLPエンドポイント、プロトコル、サービス名、リソース属性、ヘッダー、プロンプトや応答内容の収集可否を管理できる。",
+      "developerNote": "エージェント利用の監査・コスト分析・障害調査を個人環境変数任せにせず、組織の承認済みコレクターへ寄せられる。認証ヘッダーをツールサブプロセスへ渡さない設計も、秘密情報漏洩対策として重要。",
+      "terms": [
+        {
+          "term": "OpenTelemetry",
+          "meaning": "アプリやツールのログ、メトリクス、トレースを標準形式で収集・転送するためのオープン標準。"
+        },
+        {
+          "term": "OTLP",
+          "meaning": "OpenTelemetry Protocolの略。OpenTelemetryデータをコレクターへ送るための通信プロトコル。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-08-enterprise-managed-opentelemetry-export-for-vs-code-and-cli/"
+    },
+    {
+      "source": "Mistral AI",
+      "date": "2026-07-08",
+      "category": "ロボティクス",
+      "group": "research",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Mistralが単眼カメラ向けロボットナビゲーションモデルRobostral Navigateを発表",
+      "summary": "Mistral AIは、単一のRGBカメラと自然言語指示でロボットを自律移動させる8BモデルRobostral Navigateを発表した。R2R-CEの未知環境ベンチマークで76.6%の成功率を示し、深度センサーやLiDARを使う方式も上回ったとしている。",
+      "developerNote": "汎用LLM競争とは別に、身体性を持つAIの実用領域が進んでいる。製造、配送、物流、施設運用などでは、センサー構成を増やさずに自然言語から長い移動タスクを実行できるかが評価ポイントになる。",
+      "terms": [
+        {
+          "term": "RGBカメラ",
+          "meaning": "赤・緑・青の通常画像を取得する一般的なカメラ。深度や距離を直接測るセンサーではない。"
+        },
+        {
+          "term": "R2R-CE",
+          "meaning": "Room-to-Room in Continuous Environmentsの略。連続空間で自然言語指示に従って移動する能力を測るベンチマーク。"
+        }
+      ],
+      "url": "https://mistral.ai/news/robostral-navigate/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-07-08",
+      "category": "音声AI",
+      "group": "consumer",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "OpenAIがGPT-LiveをChatGPT Voiceへ展開",
+      "summary": "OpenAIは、より自然な会話を目的とした新世代音声モデルGPT-Liveを発表し、ChatGPT Voiceへ順次展開を始めた。GPT-Live-1とGPT-Live-1 miniは同時に聞き取りと発話を行う設計で、必要に応じて背後のフロンティアモデルへ検索や推論を委譲する。",
+      "developerNote": "音声UIが単純なターン制応答から、会話を維持しながら検索・推論・将来的なエージェント作業へつなぐ構成に進んだ。API提供は今後予定のため、現時点ではChatGPT Voice側の利用体験と安全設計を中心に評価したい。",
+      "terms": [
+        {
+          "term": "フルデュプレックス",
+          "meaning": "音声の入力を聞き取りながら同時に出力も行える通信・処理方式。会話の割り込みや相づちに向く。"
+        },
+        {
+          "term": "委譲",
+          "meaning": "軽量な会話モデルが、検索や深い推論など重い処理を別のモデルやシステムへ任せる設計。"
+        }
+      ],
+      "url": "https://openai.com/index/introducing-gpt-live/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-08",
+      "category": "エージェント連携",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel eveがChat SDKアダプター経由の任意チャネルに対応",
+      "summary": "Vercelのeveは、新しいChat SDK channelにより、Facebook Messenger、WhatsApp、Resend、LiveblocksなどChat SDKアダプターを持つ任意の接点へエージェントを接続できるようになった。通常のChat SDK handlerコードを書き、send呼び出しでメッセージをeveエージェントへ渡せる。",
+      "developerNote": "エージェントを単一のWebチャットに閉じず、メール、メッセージング、共同編集UIなど複数チャネルへ同じ実行基盤で展開しやすくなる。Human-in-the-loopカード、スレッド永続化、失敗通知まで既定で扱う点が運用上大きい。",
+      "terms": [
+        {
+          "term": "Chat SDKアダプター",
+          "meaning": "Slack、メール、メッセンジャーなど外部チャネルごとの入出力差分を吸収する接続部品。"
+        },
+        {
+          "term": "Human-in-the-loop",
+          "meaning": "AIの処理途中で人間の確認、承認、入力を挟み、その結果を受けて処理を再開する設計。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/eve-chat-sdk-channel"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-07",
+      "category": "IDEエージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "GitHub Copilot for JetBrains IDEsがCodexエージェントプロバイダーをプレビュー提供",
+      "summary": "GitHub Copilot for JetBrains IDEsは、Codexを新しいエージェントプロバイダーとしてpublic previewで追加した。JetBrains IDE内からCodex CLIを設定してエージェント選択できるほか、Hooks、MCPサーバー管理、Copilot CLIの承認設定、Claudeセッションの権限モードなども拡張された。",
+      "developerNote": "IDE内のCopilotが複数エージェントを束ねる操作面になりつつある。Codex CLI、MCP、承認モードが同じ画面に集まるため、企業環境では誰がどのプロバイダーと権限で実行できるかを管理ポリシー化する必要がある。",
+      "terms": [
+        {
+          "term": "エージェントプロバイダー",
+          "meaning": "IDEやチャットUIから呼び出せる、タスク実行を担当するAIエージェント実装または接続先。"
+        },
+        {
+          "term": "MCPサーバー",
+          "meaning": "Model Context ProtocolでAIエージェントに外部ツールやデータアクセスを提供するサーバー。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-07-codex-as-agent-provider-and-agentic-enhancements-in-jetbrains-ides/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-03",
+      "category": "エージェント観測",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "VercelがAgent RunsをMCPとCLIから調査可能に",
+      "summary": "Vercelは、eveのAgent RunsをVercel MCPとCLIから取得できるようにした。プロジェクト内の実行一覧、実行メタデータ、ライフサイクルイベント、利用量、サブエージェント情報、推論・ツール呼び出しを含むトレースを、エージェント自身やCIから調査できる。",
+      "developerNote": "本番エージェントの障害調査をダッシュボード操作だけに依存せず、MCP/CLI経由で自動収集できる点が重要。Vercel上のeve運用では、失敗実行のトレース取得、トークン使用量監査、回帰時の実行比較を運用手順に組み込みたい。",
+      "terms": [
+        {
+          "term": "MCP",
+          "meaning": "Model Context Protocolの略。AIエージェントが外部ツールやデータソースへ統一的に接続するためのプロトコル。"
+        },
+        {
+          "term": "トレース",
+          "meaning": "1回の処理の中で発生したステップ、呼び出し、入出力、所要時間などを時系列で追跡できる記録。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/agent-runs-vercel-mcp-cli"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-07-02",
+      "category": "AI安全性",
+      "group": "security",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AnthropicがFable 5のサイバー安全分類器と脱獄深刻度案を公開",
+      "summary": "Anthropicは、再展開したClaude Fable 5について、危険なサイバー利用を検出・遮断する安全分類器の対象範囲と、AI jailbreakの深刻度を評価する初期フレームワーク案を公開した。禁止、高リスク二重用途、低リスク二重用途、良性利用の分類で挙動を説明している。",
+      "developerNote": "高性能モデルの公開判断で、単なる利用規約ではなく分類器、アクセス制御、監視、業界横断の深刻度評価を組み合わせる方向が明確になった。セキュリティ支援機能を製品に組み込む場合の許可・遮断境界の参考になる。",
+      "terms": [
+        {
+          "term": "jailbreak",
+          "meaning": "AIモデルの安全制約を回避し、本来ブロックされる出力や操作を引き出そうとするプロンプト手法。"
+        },
+        {
+          "term": "二重用途",
+          "meaning": "防御や研究に役立つ一方で、攻撃や悪用にも転用できる性質。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-02",
+      "category": "モデルルーティング",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "beta",
+      "title": "Vercel AI Gatewayがモデルのルーティングルールに対応",
+      "summary": "Vercel AI Gatewayは、チーム単位のAI Gateway認証情報に適用されるルーティングルールをベータ提供した。特定モデルへの要求を別モデルへ書き換えるRewriteと、未承認モデルを403で拒否するDenyをCLIから設定できる。",
+      "developerNote": "モデル停止、廃止、コスト最適化、承認済みモデル制御をアプリケーションコード変更なしで実施できる。既存のBYOK、フォールバック、Zero Data Retention、プロバイダー許可リストと組み合わせた運用設計が必要。",
+      "terms": [
+        {
+          "term": "ルーティングルール",
+          "meaning": "要求されたモデルを別モデルへ置き換えたり、利用を拒否したりするゲートウェイ側の制御ルール。"
+        },
+        {
+          "term": "Zero Data Retention",
+          "meaning": "プロバイダー側で入力や出力を学習・保持しないことを目的としたデータ保持制御。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/ai-gateway-routing-rules"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-01",
+      "category": "マルチモーダル",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilot visionが一般提供",
+      "summary": "GitHub Copilot visionが一般提供され、画像とPDFをチャットプロンプトに添付してコード文脈と合わせて推論できるようになった。VS Code、github.com、Copilot CLIで利用でき、FreeからEnterpriseまで全Copilot加入者に提供される。",
+      "developerNote": "UIスクリーンショット、設計資料、PDF仕様書をコード修正やレビューに直接渡せるため、フロントエンド修正や仕様追跡のワークフローが変わる。Business/Enterpriseでは添付ファイル保持が約24時間と説明されているため、機密資料の扱いは社内ポリシーと合わせて確認したい。",
+      "terms": [
+        {
+          "term": "マルチモーダル",
+          "meaning": "テキストだけでなく、画像、PDF、音声など複数種類の入力を扱えるAI機能。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-01-copilot-vision-is-generally-available/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-01",
+      "category": "ブラウザ操作",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "VS CodeのGitHub Copilotブラウザツールが一般提供",
+      "summary": "VS CodeのGitHub Copilotブラウザツールが一般提供され、エージェントが実ブラウザでページ移動、クリック、入力、ホバー、ダイアログ処理、コンソール確認、スクリーンショット取得を行えるようになった。",
+      "developerNote": "E2E確認、ブラウザ上の再現調査、コンソールエラー収集をCopilotエージェントの標準フローに入れやすくなる。企業管理では専用オン/オフ設定とネットワークドメイン制御があるため、社内環境では許可ドメイン設計が重要。",
+      "terms": [
+        {
+          "term": "ネットワークドメイン制御",
+          "meaning": "エージェントや統合ブラウザがアクセスできるドメインを許可リストまたは拒否リストで制限する管理機能。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-06-30",
+      "category": "モデル",
+      "group": "model",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AnthropicがClaude Sonnet 5を提供開始",
+      "summary": "Anthropicは、エージェント性能、推論、ツール利用、コーディング、知識作業を強化したClaude Sonnet 5を発表した。Free/Proの既定モデルになり、Max、Team、Enterprise、Claude Code、Claude Platformでも利用できる。",
+      "developerNote": "Sonnet 5はOpus 4.8に近い性能を低コストで狙う位置づけ。Claude APIではclaude-sonnet-5として使えるため、既存のSonnet系エージェントやコーディング支援のモデル選択を再評価する価値がある。",
+      "terms": [
+        {
+          "term": "エージェント性能",
+          "meaning": "計画、ツール利用、途中結果の確認、複数ステップの作業継続などを自律的に進める能力。"
+        },
+        {
+          "term": "MTok",
+          "meaning": "100万トークンを表す料金単位。入力または出力のテキスト量に応じた課金で使われる。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/claude-sonnet-5"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-06-30",
+      "category": "研究支援",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "beta",
+      "title": "Anthropicが研究者向けClaude Scienceをベータ提供",
+      "summary": "Anthropicは、科学者向けAIワークベンチClaude Scienceをベータ提供した。文献分析、複数ステップの研究実行、図表や原稿の生成、計算資源管理、監査可能な履歴、60以上の科学向けスキルとコネクタを統合する。",
+      "developerNote": "ライフサイエンスや計算研究で、AIエージェントの出力を再現・監査できる形で残す設計が前面に出ている。研究データが手元インフラに残る説明もあり、機密データを扱うAIワークベンチ設計の参考になる。",
+      "terms": [
+        {
+          "term": "ワークベンチ",
+          "meaning": "特定の作業に必要なツール、データ接続、実行環境、成果物管理をまとめた作業環境。"
+        },
+        {
+          "term": "HPC",
+          "meaning": "High Performance Computingの略。大規模計算に使う高性能計算環境。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/claude-science-ai-workbench"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-26",
+      "category": "モデル",
+      "group": "dev",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Copilot BusinessとEnterpriseでMAI-Code-1-Flashが一般提供",
+      "summary": "GitHubは、Microsoft AIの自社製コーディングモデルMAI-Code-1-FlashをCopilot BusinessとCopilot Enterpriseで一般提供した。高速・低遅延応答を重視し、大量の反復的なエージェント型コーディングに向けたモデルとしている。",
+      "developerNote": "組織管理者がCopilot設定でポリシーを有効化する必要がある。利用量ベース課金の対象になるため、企業環境ではモデル選択ポリシーとコスト監視をセットで確認したい。",
+      "terms": [
+        {
+          "term": "MAI-Code-1-Flash",
+          "meaning": "Microsoft AIが開発した、GitHub Copilot向けの高速コーディングモデル。"
+        },
+        {
+          "term": "利用量ベース課金",
+          "meaning": "固定料金だけでなく、使ったモデルやリクエスト量に応じて料金が発生する課金方式。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-26-mai-code-1-flash-for-copilot-business-and-copilot-enterprise/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-26",
+      "category": "モデル",
+      "group": "dev",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "OpenAIがGPT-5.6 Solを限定プレビュー公開",
+      "summary": "OpenAIは、GPT-5.6シリーズの旗艦モデルSolと、Terra、Lunaを限定プレビューとして公開した。APIとCodexで一部の信頼済みパートナーから提供を始め、今後数週間でより広い提供を計画している。",
+      "developerNote": "GPT-5.6はmax reasoning effort、subagentを使うultra mode、明示的なキャッシュ境界などを含むため、エージェント型コーディングや長時間セキュリティ作業の設計・コスト見積もりに影響する。限定プレビューのため本番採用判断は一般提供後の評価待ち。",
+      "terms": [
+        {
+          "term": "max reasoning effort",
+          "meaning": "モデルにより長く深く推論させるための推論量設定。"
+        },
+        {
+          "term": "ultra mode",
+          "meaning": "単一エージェントを超えてサブエージェントを使い、複雑な作業を進めるGPT-5.6の新モード。"
+        },
+        {
+          "term": "キャッシュ境界",
+          "meaning": "プロンプトのどこまでを再利用可能なキャッシュとして扱うかを明示する区切り。"
+        }
+      ],
+      "url": "https://openai.com/index/previewing-gpt-5-6-sol/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-06-26",
+      "category": "エージェント観測",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercelがeveエージェント実行の観測機能を追加",
+      "summary": "Vercelは、オープンソースのエージェントフレームワークeve向けに、Agent RunsをVercelダッシュボードで確認できるようにした。各セッションのトリガー、所要時間、トークン使用量、ターン、モデル呼び出し、ツール呼び出し、失敗ステップを追跡できる。",
+      "developerNote": "本番エージェントでは「何をしたか」「どこで失敗したか」「どれだけコストがかかったか」を追えることが必須になる。Vercel上のAI SDK/eve構成では、OpenTelemetry連携や保持期間も含めて監査・障害調査の設計対象にしたい。",
+      "terms": [
+        {
+          "term": "Agent Runs",
+          "meaning": "エージェントの1回の実行について、入力、ステップ、モデル呼び出し、ツール呼び出し、結果を追跡する記録。"
+        },
+        {
+          "term": "OpenTelemetry",
+          "meaning": "ログ、メトリクス、トレースなどの観測データを共通形式で収集・転送するための標準。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/eve-agent-observability"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-25",
+      "category": "企業ガバナンス",
+      "group": "dev",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Copilot CLIとVS Codeで許可済みマーケットプレイス制御が公開プレビュー",
+      "summary": "GitHubは、Copilot CLIとVS Codeでユーザーがインストールできるプラグインの提供元を企業管理設定で制限できるようにした。strictKnownMarketplacesを設定すると、明示的に定義したマーケットプレイス以外からのプラグイン導入を防げる。",
+      "developerNote": "AIエージェントがツール実行する前段で、未承認プラグインを排除できるのは重要な供給網・データ境界対策。Copilot Business/Enterpriseでは、モデル利用ポリシーだけでなくクライアント側プラグイン統制も確認したい。",
+      "terms": [
+        {
+          "term": "strictKnownMarketplaces",
+          "meaning": "Copilot CLIやVS Codeで、企業が許可したマーケットプレイスからのプラグインだけを認めるための管理設定。"
+        },
+        {
+          "term": "供給網リスク",
+          "meaning": "外部プラグインや依存サービスを通じて、不正コードや情報漏洩が入り込むリスク。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-25-enterprise-managed-settings-now-support-strictknownmarketplaces-in-vs-code-and-the-cli/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-25",
+      "category": "コードレビュー",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "CopilotコードレビューがCLI由来の探索ツールで効率化",
+      "summary": "GitHubは、CopilotコードレビューがCopilot CLIとSDKのファイル探索ツールを使うようになり、既存ワークフローを変えずにレビュー効率を高めたと発表した。",
+      "developerNote": "レビューがgrep、rg、glob、view相当の探索を使うため、大きな差分でも対象箇所を絞り込みやすくなる。組織単位の分析深度設定も加わり、レビュー品質とコストの調整ポイントが増えた。",
+      "terms": [
+        {
+          "term": "分析深度",
+          "meaning": "AIコードレビューで、どれだけ詳しくコードを探索・推論するかを示す設定。"
+        },
+        {
+          "term": "ファイル探索ツール",
+          "meaning": "リポジトリ内のコードを検索、一覧、閲覧して関連箇所を見つけるためのツール群。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-25-copilot-code-review-analysis-depth-and-efficiency-updates/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-25",
+      "category": "開発ワークフロー",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilot for Jiraが一般提供",
+      "summary": "GitHubはCopilot for Jiraを一般提供した。Jira課題内でコーディングエージェントの進行状況をリアルタイムに確認でき、ドラフトPR作成後もJiraのチャットパネルから同じPRに追加指示を出せる。",
+      "developerNote": "Jiraを起点にエージェント作業を依頼・追跡・追加指示できるため、開発チームの既存チケット運用にAI作業を組み込みやすくなる。MCP経由のConfluence文脈やカスタムエージェントも含め、権限境界と監査ログを確認したい。",
+      "terms": [
+        {
+          "term": "MCP",
+          "meaning": "Model Context Protocolの略。AIが外部ツールやデータソースへ接続するための共通プロトコル。"
+        },
+        {
+          "term": "ドラフトPR",
+          "meaning": "レビュー前の作業中プルリクエスト。完成前の変更を共有し、追加修正を続けられる。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-25-github-copilot-for-jira-is-now-generally-available/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-25",
+      "category": "エージェント活用",
+      "group": "business",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "OpenAIがCodexの業務利用拡大を経済研究として公開",
+      "summary": "OpenAIは、Codexの利用データをもとに、エージェントが単発の対話から長時間の委任タスクへ移っていることを示す経済研究を公開した。",
+      "developerNote": "Codex利用が開発者だけでなく法務、財務、採用などにも広がっている点は、社内AI導入を「チャット補助」ではなく、検証可能な長時間タスクの委任基盤として設計する必要性を示している。",
+      "terms": [
+        {
+          "term": "エージェント型AI",
+          "meaning": "人間の指示を受けて、複数ステップの作業やツール実行を自律的に進めるAI。"
+        },
+        {
+          "term": "長時間タスク",
+          "meaning": "人間なら30分から数時間以上かかる作業を、AIに分解、実行、検証させる使い方。"
+        }
+      ],
+      "url": "https://openai.com/index/how-agents-are-transforming-work/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-06-25",
+      "category": "AI SDK",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel AI SDK 7が本番エージェント基盤へ拡張",
+      "summary": "VercelはAI SDK 7を公開し、TypeScriptでの本番エージェント開発、実行、統合、観測を支える大規模リリースとして位置づけた。",
+      "developerNote": "推論制御、ランタイムコンテキスト、ツール承認、WorkflowAgent、テレメトリ、音声・画像・動画系APIが整理された一方、Node.js 22とESMが必須になるため既存アプリは移行計画が必要になる。",
+      "terms": [
+        {
+          "term": "WorkflowAgent",
+          "meaning": "長時間または複数ステップのAI処理を、耐久的に実行するためのVercel AI SDKのエージェント機能。"
+        },
+        {
+          "term": "ESM",
+          "meaning": "JavaScriptの標準モジュール方式。import/export構文を使う。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/ai-sdk-7"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-06-25",
+      "category": "AI SDK",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel AI SDK HarnessがDeep AgentsとOpenCodeに対応",
+      "summary": "VercelはAI SDK HarnessにDeep AgentsとOpenCodeのアダプターを追加した。複数のコーディングエージェント実行基盤を統一インターフェースで扱い、Vercel Sandbox内でセッション、ツール承認、モデル選択を利用できる。",
+      "developerNote": "Claude Code、Codex、Deep Agents、OpenCode、Piを同じHarnessAgentの形で切り替えられるため、エージェント基盤を特定ランタイムに固定しない設計がしやすくなる。Sandbox実行と承認フローを前提に安全境界を設計したい。",
+      "terms": [
+        {
+          "term": "AI SDK Harness",
+          "meaning": "複数のエージェント実行ランタイムを同じAPI形状で扱うためのVercel AI SDKの仕組み。"
+        },
+        {
+          "term": "Vercel Sandbox",
+          "meaning": "AIエージェントなどのコード実行を隔離環境で動かすためのVercelの実行基盤。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/deepagents-and-opencode-harness-adapters"
+    },
+    {
+      "source": "Google Gemini",
+      "date": "2026-06-24",
+      "category": "エージェント操作",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Gemini 3.5 FlashでComputer Useツールが公開プレビュー",
+      "summary": "GoogleはGemini APIのリリースノートで、Gemini 3.5 Flash向けComputer Useツールの公開プレビューを発表した。ブラウザ、モバイル、デスクトップ環境の操作、設定可能な安全ポリシー、高度なプロンプトインジェクション検出を含む。",
+      "developerNote": "Gemini API上で画面操作型エージェントを組み込む選択肢が増える。外部UIを操作する機能なので、権限分離、操作ログ、プロンプトインジェクション対策を設計段階から確認する必要がある。",
+      "terms": [
+        {
+          "term": "Computer Use",
+          "meaning": "AIがブラウザやアプリ画面を見ながらクリック、入力、移動などの操作を行う機能。"
+        },
+        {
+          "term": "プロンプトインジェクション",
+          "meaning": "Webページや外部データに紛れた命令でAIの本来の指示を上書きしようとする攻撃手法。"
+        }
+      ],
+      "url": "https://ai.google.dev/gemini-api/docs/changelog"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-24",
+      "category": "インフラ",
+      "group": "business",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "OpenAIとBroadcomがLLM推論向けチップJalapenoを発表",
+      "summary": "OpenAIとBroadcomは、LLM推論向けに設計したOpenAI初のIntelligence Processor「Jalapeno」を発表した。OpenAIのモデルロードマップ、カーネル、サービング、製品要件をもとに設計され、初期展開は2026年末を予定している。",
+      "developerNote": "推論コスト、レイテンシ、信頼性はAPI価格やCodexの長時間タスク実行に直結する。現時点では技術レポート待ちだが、OpenAIがモデルからチップまでフルスタック化を進める動きとして追跡価値が高い。",
+      "terms": [
+        {
+          "term": "推論チップ",
+          "meaning": "学習済みAIモデルを実際に動かして回答を生成する処理に最適化した半導体。"
+        },
+        {
+          "term": "tape-out",
+          "meaning": "半導体設計を製造工程へ渡せる状態に確定する節目。"
+        }
+      ],
+      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip/"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-06-23",
+      "category": "チームエージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "beta",
+      "title": "AnthropicがSlackで使うClaude Tagをベータ提供",
+      "summary": "Anthropicは、Slack上で@Claudeを呼び出し、チャンネル文脈、接続ツール、コードベースを使ってチーム作業を委任できるClaude Tagを発表した。",
+      "developerNote": "チーム共有の文脈でClaudeが非同期に作業し、必要に応じて予定タスクやプロアクティブ通知も行う。Enterprise/Team向けベータなので、権限設計と接続データの範囲管理が導入判断の中心になる。",
+      "terms": [
+        {
+          "term": "アンビエント動作",
+          "meaning": "ユーザーが明示的に毎回依頼しなくても、AIが周辺状況を見て必要な更新や注意喚起を行う動作。"
+        },
+        {
+          "term": "チャンネル文脈",
+          "meaning": "Slackチャンネル内の会話、ファイル、接続ツールから得られるチーム共有の背景情報。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/introducing-claude-tag"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-23",
+      "category": "CLI",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilot CLIの新ターミナルUIが一般提供",
+      "summary": "GitHubは、Microsoft Build 2026でプレビューしていたCopilot CLIの新しいターミナルUIを一般提供し、Issue、Pull Request、Gistをタブで扱えるようにした。",
+      "developerNote": "ターミナル内でIssueやPRを参照して調査、修正、レビューを依頼でき、MCP、Skills、Plugins、設定も対話的に管理できる。CLI中心の開発者には導入障壁が下がる更新。",
+      "terms": [
+        {
+          "term": "MCP",
+          "meaning": "AIエージェントが外部ツールやデータソースへ接続するための共通プロトコル。"
+        },
+        {
+          "term": "Skills",
+          "meaning": "AIツールに特定の作業手順や知識を追加するための拡張単位。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-23-copilot-cli-new-terminal-interface-is-generally-available/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-23",
+      "category": "モデル接続",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub CopilotアプリがBYOKモデル接続に対応",
+      "summary": "GitHubはCopilotアプリでBYOKをサポートし、OpenAI、Azure OpenAI、Microsoft Foundry、Anthropic、LM Studio、Ollama、OpenAI互換エンドポイントなど、自社管理のモデルプロバイダーをエージェントセッションに使えるようにした。",
+      "developerNote": "企業や規制産業では、既存のクラウドテナント、課金、リージョン、データ処理条件を保ったままCopilotアプリを使える利点がある。APIキーはOSのキーチェーンに保存されるが、利用ポリシーと監査は別途設計が必要。",
+      "terms": [
+        {
+          "term": "BYOK",
+          "meaning": "Bring Your Own Keyの略。サービス提供側の既定モデルではなく、利用者が自分のAPIキーやモデル接続先を持ち込む方式。"
+        },
+        {
+          "term": "OpenAI互換エンドポイント",
+          "meaning": "OpenAI APIと似た形式で呼び出せる、別プロバイダーや社内ゲートウェイのAPI接続先。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-22",
+      "category": "セキュリティ自動化",
+      "group": "security",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "OpenAIがDaybreakとCodex Security更新を発表",
+      "summary": "OpenAIは、脆弱性の発見だけでなく修正の自動化を進めるDaybreakの拡張、Codex Securityプラグイン更新、GPT-5.5-Cyberの限定提供を発表した。",
+      "developerNote": "Codex Securityは深いスキャン、差分レビュー、攻撃経路分析、脅威モデル作成、検証、パッチ生成までを防御用途にまとめる。ASVS準拠を意識するプロジェクトでは、人間レビューを残した修正支援として評価したい。",
+      "terms": [
+        {
+          "term": "攻撃経路分析",
+          "meaning": "脆弱性が実際に悪用可能か、入力元から影響箇所までの流れを追って確認する分析。"
+        },
+        {
+          "term": "GPT-5.5-Cyber",
+          "meaning": "信頼された防御者向けに限定提供される、サイバー防御用途へ調整されたOpenAIモデル。"
+        }
+      ],
+      "url": "https://openai.com/index/daybreak-securing-the-world/"
+    },
+    {
+      "source": "Google DeepMind",
+      "date": "2026-06-18",
+      "category": "エージェント安全性",
+      "group": "security",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "DeepMindがAIエージェント制御ロードマップを公開",
+      "summary": "Google DeepMindは、高度化するAIエージェントを内部システムで安全に運用するため、サンドボックス、監視、権限制御を組み合わせるAI Control Roadmapを説明した。",
+      "developerNote": "エージェントを潜在的な内部脅威として扱い、権限を段階的に与え、監視AIや人間レビューで逸脱を止める設計は、社内エージェント導入時のセキュリティ要件に直結する。",
+      "terms": [
+        {
+          "term": "AI Control Roadmap",
+          "meaning": "AIエージェントの能力やリスクに応じて、監視、検知、予防、対応を段階的に強めるための設計方針。"
+        },
+        {
+          "term": "防御の多層化",
+          "meaning": "一つの対策に依存せず、サンドボックス、監視、権限分離など複数の防御を重ねる考え方。"
+        }
+      ],
+      "url": "https://deepmind.google/blog/securing-the-future-of-ai-agents/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-18",
+      "category": "エンタープライズ管理",
+      "group": "business",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "ChatGPT Enterpriseに利用分析と支出管理を追加",
+      "summary": "OpenAIは、ChatGPT Enterpriseの管理者向けにクレジット利用分析と更新された支出管理を追加し、ユーザー、製品、モデル別の消費状況を確認できるようにした。",
+      "developerNote": "Codexを含む利用量をGlobal Admin ConsoleとCost APIで追えるため、部門別のAI予算管理や高利用チームの把握がしやすくなる。企業導入では、上限設定と例外承認フローを先に決めておきたい。",
+      "terms": [
+        {
+          "term": "Cost API",
+          "meaning": "利用量やコスト関連データを自社の分析基盤へ取り込むためのAPI。"
+        },
+        {
+          "term": "クレジット利用分析",
+          "meaning": "AI機能の利用量を、ユーザーや製品などの単位で把握するための管理者向け分析機能。"
+        }
+      ],
+      "url": "https://openai.com/index/chatgpt-enterprise-spend-controls/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-17",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilotアプリが正式提供に",
+      "summary": "GitHubは、macOS、Windows、Linux向けのGitHub Copilotアプリを一般提供し、Issue、Pull Request、プロンプトからエージェント開発セッションを開始できるようにした。",
+      "developerNote": "複数リポジトリで並列セッションを動かし、差分確認、統合ターミナル、ブラウザ検証、PR作成まで同じアプリで扱える。技術プレビュー扱いだったデスクトップ運用を本格導入候補として評価できる段階になった。",
+      "terms": [
+        {
+          "term": "ワークツリー",
+          "meaning": "同じリポジトリの別ブランチを、別ディレクトリとして同時に扱えるGitの作業領域。"
+        },
+        {
+          "term": "MCPサーバー",
+          "meaning": "AIエージェントが外部ツールや社内データへ接続するための共通インターフェースを提供するサーバー。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-17-github-copilot-app-generally-available/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-06-17",
+      "category": "エージェント認証",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "beta",
+      "title": "Vercel Connectがエージェント向け短期トークンを公開ベータ提供",
+      "summary": "Vercelは、Slack、GitHub、Salesforce、MCPサーバーなど外部サービスへ、長期シークレットを環境変数に保存せず短期・スコープ付きトークンで接続するVercel Connectを公開ベータにした。",
+      "developerNote": "エージェントが必要なタイミングだけ限定権限のトークンを取得できるため、長期シークレット流出リスクを下げられる。公開ベータなので、本番利用前に対象プロバイダー、環境分離、失効手順を検証したい。",
+      "terms": [
+        {
+          "term": "短期トークン",
+          "meaning": "短時間だけ有効で、漏洩時の影響を長期鍵より小さくしやすい認証情報。"
+        },
+        {
+          "term": "スコープ付きトークン",
+          "meaning": "特定のリポジトリや操作など、必要最小限の権限だけを持つ認証情報。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/vercel-connect-secure-access-to-external-services-for-your-agents"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-06-12",
+      "category": "モデル規制",
+      "group": "policy",
+      "type": "policy",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AnthropicがFable 5とMythos 5の全顧客アクセス停止を発表",
+      "summary": "Anthropicは、米国政府の輸出管理指示に従い、Fable 5とMythos 5への全顧客アクセスを停止すると発表した。他のAnthropicモデルへの影響はないとしている。",
+      "developerNote": "特定モデルの提供可否が規制判断で急変する事例として、モデル依存のプロダクトや業務フローでは代替モデル、地域制限、停止時の告知手順を準備しておく必要がある。",
+      "terms": [
+        {
+          "term": "輸出管理",
+          "meaning": "安全保障などを理由に、特定技術や製品の提供先や利用者を制限する制度。"
+        },
+        {
+          "term": "ジェイルブレイク",
+          "meaning": "AIモデルの安全制約を回避し、本来制限される出力を引き出そうとする手法。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/fable-mythos-access"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-11",
+      "category": "自動化ワークフロー",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "GitHub Agentic Workflowsが公開プレビューに",
+      "summary": "GitHubは、Issue分類、CI失敗分析、ドキュメント更新などの推論型タスクを、Markdown定義からGitHub Actions上のエージェントワークフローへ変換する公開プレビューを開始した。",
+      "developerNote": "既存のActionsランナー、ポリシー、権限制約を再利用しながらエージェント自動化を導入できる。公開プレビュー中は、読み取り専用権限、サンドボックス、Firewall、出力検証の挙動を実リポジトリで確認したい。",
+      "terms": [
+        {
+          "term": "エージェントワークフロー",
+          "meaning": "AIエージェントに複数手順の作業を自律的に進めさせる自動化処理。"
+        },
+        {
+          "term": "GitHub Actions",
+          "meaning": "GitHub上でテスト、ビルド、デプロイ、自動化処理を実行するCI/CD基盤。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-11-github-agentic-workflows-is-now-in-public-preview/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-05",
+      "category": "モデル運用",
+      "group": "dev",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "CopilotでGPT-5.2系モデルが非推奨に",
+      "summary": "GitHub Copilotは、Copilot Chatや補完など大半の体験でGPT-5.2とGPT-5.2-Codexを非推奨にし、代替モデルへの移行を促した。",
+      "developerNote": "モデル固定の運用や企業ポリシーでGPT-5.2系を許可している場合、GPT-5.5やGPT-5.3-Codexへの切り替え可否を確認する必要がある。Code reviewではGPT-5.2が残るため、利用面ごとのモデル差分も見直したい。",
+      "terms": [
+        {
+          "term": "非推奨",
+          "meaning": "すぐに削除されるとは限らないが、新規利用や継続利用を避け、代替手段へ移行すべき状態。"
+        },
+        {
+          "term": "モデルポリシー",
+          "meaning": "組織や企業アカウントで、利用できるAIモデルを管理者が許可・制限する設定。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-05-gpt-5-2-and-gpt-5-2-codex-deprecated/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-05",
+      "category": "エンタープライズ管理",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "VS Codeで企業管理Copilotプラグインが公開プレビュー",
+      "summary": "GitHub Copilotは、企業管理者がCopilot CLIとVS Code向けにプラグイン、スキル、MCP設定を配布・標準化できる公開プレビューを開始した。",
+      "developerNote": "チーム共通のエージェント拡張、社内マーケットプレイス、常時有効なフックを配布できるため、オンボーディング短縮とガバナンス強化に効く。公開プレビューなので、本番標準化前に対象クライアントと設定配布範囲を検証したい。",
+      "terms": [
+        {
+          "term": "MCP",
+          "meaning": "AIツールや外部データソースを共通形式で接続するためのプロトコル。"
+        },
+        {
+          "term": "公開プレビュー",
+          "meaning": "正式版前に広く試せるが、仕様変更や制限が残る可能性がある提供段階。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-05-enterprise-managed-plugins-in-vs-code-in-public-preview/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-06-05",
+      "category": "エージェント実行環境",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "beta",
+      "title": "Vercel Sandboxが永続ドライブをプライベートベータ提供",
+      "summary": "Vercel Sandboxは、サンドボックスの停止後も残る永続ドライブをプライベートベータで追加した。",
+      "developerNote": "使い捨てサンドボックスでも、リポジトリ、依存関係、ビルド成果物を別ライフサイクルで保持できる。ベータ中は本番データ用途を避け、同時書き込み制限を前提に設計したい。",
+      "terms": [
+        {
+          "term": "永続ドライブ",
+          "meaning": "一時実行環境が停止しても残り、後から別の実行環境へ再接続できる保存領域。"
+        },
+        {
+          "term": "プライベートベータ",
+          "meaning": "正式提供前に、招待や待機リスト経由の限られた利用者へ試験提供する段階。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/drives-for-vercel-sandbox-in-private-beta"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-06-04",
+      "category": "コード支援",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Copilotが100万トークン文脈と推論レベル調整に対応",
+      "summary": "GitHub Copilotは、対応モデルで100万トークンのコンテキストウィンドウと、速度・深さを選べる推論レベル調整に対応した。",
+      "developerNote": "VS Code、Copilot CLI、Copilotアプリで利用できる。大規模コードベースや複数ファイルの難しい調査に有効だが、長い文脈や高い推論レベルはAIクレジット消費が増える。",
+      "terms": [
+        {
+          "term": "コンテキストウィンドウ",
+          "meaning": "AIが一度の処理で参照できる入力情報の量。"
+        },
+        {
+          "term": "推論レベル",
+          "meaning": "回答の速さと、問題を深く考えるために使う処理量のバランスを調整する設定。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-04-larger-context-windows-and-configurable-reasoning-levels-for-github-copilot/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-06-04",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Visual StudioのCopilotにPlanエージェントとスキル管理",
+      "summary": "GitHubはVisual Studio 2026のCopilotに、編集前に実装計画を作るPlanエージェント、スキル管理画面、複数ファイル差分の一括確認を追加した。",
+      "developerNote": "読み取り専用でコードベースを調査して計画をMarkdownへ保存し、確認後にAgentモードへ渡せる。計画、実装、差分レビューの分離に使いやすい。",
+      "terms": [
+        {
+          "term": "Planエージェント",
+          "meaning": "コードを変更する前に、調査と質問を行って実装計画を作成するエージェント。"
+        },
+        {
+          "term": "エージェントスキル",
+          "meaning": "AIエージェントが特定の作業手順や専門知識を再利用するための定義。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-04-github-copilot-in-visual-studio-may-update/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-04",
+      "category": "エージェントAPI",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Copilot cloud agentタスクAPIが個人有料プランへ拡大",
+      "summary": "GitHub Copilotは、Pro、Pro+、MaxユーザーがREST APIでCopilot cloud agentタスクを開始・追跡できる公開プレビューを開始した。",
+      "developerNote": "リファクタの横展開、社内ポータルからのリポジトリ作成、定期リリース準備などをAPI経由で組み込める。公開プレビュー中は認証トークン、実行権限、監査ログの取り扱いを先に固めたい。",
+      "terms": [
+        {
+          "term": "REST API",
+          "meaning": "HTTPリクエストで外部システムから機能を呼び出すためのAPI形式。"
+        },
+        {
+          "term": "fine-grained token",
+          "meaning": "アクセスできるリポジトリや権限を細かく限定できるGitHubの個人アクセストークン。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-04-agent-tasks-rest-api-now-available-for-copilot-pro-pro-and-max/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-06-04",
+      "category": "CI修復",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "失敗したActionsをCopilotがワンクリック修復",
+      "summary": "GitHub Copilotは、Pro、Pro+、Maxユーザー向けに、失敗したGitHub ActionsジョブをCopilot cloud agentへ修復依頼できる機能を提供した。",
+      "developerNote": "CIログ画面から修復を任せると、エージェントがクラウド開発環境で原因調査、ブランチへの修正push、レビュー依頼まで進める。単純なテスト・Lint失敗の処理を任せやすい一方、権限範囲とレビュー手順は明確にしておきたい。",
+      "terms": [
+        {
+          "term": "GitHub Actions",
+          "meaning": "GitHub上でテスト、ビルド、デプロイなどを自動実行するCI/CD機能。"
+        },
+        {
+          "term": "Copilot cloud agent",
+          "meaning": "GitHubが用意するクラウド開発環境でコード変更や検証を行うCopilotのエージェント機能。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-04-fix-with-copilot-for-failing-actions-now-in-pro-pro-and-max/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-04",
+      "category": "記憶・パーソナライズ",
+      "group": "business",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "ChatGPTの記憶をDreaming基盤へ強化",
+      "summary": "OpenAIはChatGPTの記憶合成システムを更新し、鮮度、継続性、関連性を保ちやすいDreaming基盤の展開を始めた。",
+      "developerNote": "複数会話から背景情報や好みを合成し、時間経過で古くなった文脈も更新する設計。米国のPlus/Proから開始し、今後FreeやGoにも展開予定のため、パーソナライズ前提のUX設計で確認したい。",
+      "terms": [
+        {
+          "term": "Dreaming",
+          "meaning": "会話履歴から有用な記憶をバックグラウンドで合成し、次回以降の会話へ反映する仕組み。"
+        },
+        {
+          "term": "記憶合成",
+          "meaning": "個別の会話内容をそのまま保存するのではなく、利用者に関する有用な文脈として整理する処理。"
+        }
+      ],
+      "url": "https://openai.com/index/chatgpt-memory-dreaming/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-06-04",
+      "category": "AI Gateway",
+      "group": "dev",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AI GatewayでNemotron 3 Ultraを利用可能に",
+      "summary": "Vercel AI Gatewayは、長時間エージェント作業向けのNvidia Nemotron 3 Ultraを追加した。",
+      "developerNote": "1Mトークン文脈、サブエージェント委譲、エラー回復を想定したモデルとして、AI SDKから `nvidia/nemotron-3-ultra-550b-a55b` を指定できる。複数モデルの費用・速度比較に新しい候補が加わる。",
+      "terms": [
+        {
+          "term": "Mixture-of-Experts",
+          "meaning": "入力ごとに一部の専門モデルだけを動かし、大規模化と効率を両立するモデル構成。"
+        },
+        {
+          "term": "サブエージェント委譲",
+          "meaning": "主エージェントが作業の一部を別の補助エージェントへ任せる処理。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/nemotron-3-ultra-now-available-on-ai-gateway"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-06-04",
+      "category": "AI利用規約",
+      "group": "business",
+      "type": "policy",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AI機能と第三者ツールの責任分担を利用規約へ明記",
+      "summary": "Vercelは利用規約とMarketplace規約を更新し、AI機能や第三者ツールがアカウント上で行う操作の責任範囲を明確化した。",
+      "developerNote": "v0、Vercel Agent、AI Gateway、自然言語WAFなどが利用者の設定範囲で操作する前提が明文化された。AIエージェントにAPIキーや権限を渡す運用では、承認、監視、費用上限の設計が重要になる。",
+      "terms": [
+        {
+          "term": "第三者ツール",
+          "meaning": "利用者がVercelアカウントへのアクセスを許可した、Vercel以外のツール、スクリプト、サービス、自動化。"
+        },
+        {
+          "term": "Authorized Users",
+          "meaning": "規約上、利用者の代わりに操作できるユーザーやツールとして扱われる主体。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/updates-to-legal-terms-june-2026"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-06-03",
+      "category": "セキュリティ",
+      "group": "business",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AnthropicがAI利用サイバー攻撃832件を分析",
+      "summary": "Anthropicは、悪意あるサイバー活動で停止した832アカウントを分析し、AI利用が攻撃の後半工程や自律的な攻撃連鎖へ広がっていると報告した。",
+      "developerNote": "技術数や利用画面だけでは攻撃者の危険度を測りにくく、権限昇格や横展開を連鎖実行するエージェント構成の監視が重要になる。",
+      "terms": [
+        {
+          "term": "MITRE ATT&CK",
+          "meaning": "サイバー攻撃者が使う戦術や技術を整理した知識ベース。"
+        },
+        {
+          "term": "横展開",
+          "meaning": "侵入後にネットワーク内の別端末やアカウントへ移動して攻撃範囲を広げること。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-06-03",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "VS CodeのCopilotに複数プロジェクト対応のAgents画面",
+      "summary": "GitHubは、複数プロジェクトのエージェント作業を並行管理できるAgents画面や、切断後も続くリモートエージェントをVS Code Stableへプレビュー提供した。",
+      "developerNote": "セッション同期、隔離環境向けBYOK、機密入力をLLMへ渡さない端末入力など、長時間エージェント運用と安全性の両方が強化されている。",
+      "terms": [
+        {
+          "term": "BYOK",
+          "meaning": "利用者が自分で契約したモデル提供元のAPIキーを持ち込んで使う方式。"
+        },
+        {
+          "term": "リモートエージェント",
+          "meaning": "手元の端末とは別の環境で動き、接続が切れても作業を続けられるAIエージェント。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-03-github-copilot-in-visual-studio-code-may-releases/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-03",
+      "category": "ライフサイエンスAI",
+      "group": "business",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "GPT-Rosalindに創薬・ゲノミクス向け新機能",
+      "summary": "OpenAIはライフサイエンス向けGPT-Rosalindを更新し、創薬、ゲノミクス、実験ワークフローの推論と実行支援を強化した。",
+      "developerNote": "Life Sciences ResearchとLife Sciences NGS Analysisプラグイン、配列・アラインメント・構造ビューアをCodexで使える。GPT-Rosalind本体は適格組織向けの研究プレビューなので、導入には信頼アクセス条件の確認が必要。",
+      "terms": [
+        {
+          "term": "メディシナルケミストリー",
+          "meaning": "薬として有用な分子を設計、評価、最適化する研究分野。"
+        },
+        {
+          "term": "NGS",
+          "meaning": "次世代シーケンシング。大量のDNAやRNA配列を高速に読む解析技術。"
+        }
+      ],
+      "url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-06-02",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Copilot CLIに批評エージェント、音声入力、プロンプト予約",
+      "summary": "GitHubはCopilot CLIに、計画や実装を別視点で点検するRubber duck、音声入力、プロンプト予約、実験的な新ターミナル画面を追加した。",
+      "developerNote": "Rubber duckと音声入力は正式提供。プロンプト予約とIssue・PR・Gistを切り替える新画面は実験機能のため、運用導入時は仕様変更を見込む必要がある。",
+      "terms": [
+        {
+          "term": "Rubber duck",
+          "meaning": "主エージェントの計画や実装を別視点から批評し、見落としや設計上の問題を指摘する組み込みエージェント。"
+        },
+        {
+          "term": "プロンプト予約",
+          "meaning": "指定した時刻や間隔でAIへの指示を実行する機能。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-02-copilot-cli-improved-ui-rubber-duck-prompt-scheduling-and-voice-input/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-06-02",
+      "category": "安全な実行環境",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Copilotのクラウド・ローカルサンドボックスを公開プレビュー",
+      "summary": "GitHubは、Copilotによるコマンド実行をファイルシステムやネットワークから隔離するローカル／クラウドのサンドボックスを公開プレビューした。",
+      "developerNote": "ローカルではセッション単位の制限、クラウドでは一時的なLinux環境を使える。エージェントへ広い権限を渡す前に隔離と組織ポリシーを適用しやすくなる。",
+      "terms": [
+        {
+          "term": "サンドボックス",
+          "meaning": "プログラムのアクセス範囲を制限し、他のデータやシステムへの影響を抑える隔離実行環境。"
+        },
+        {
+          "term": "一時的な環境",
+          "meaning": "作業ごとに作成され、終了後に破棄される実行環境。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-02-cloud-and-local-sandboxes-for-github-copilot-now-in-public-preview/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-06-02",
+      "category": "開発基盤",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilot SDKが一般提供",
+      "summary": "GitHubは、Copilotのエージェント実行基盤を独自アプリやサービスへ組み込めるCopilot SDKを、安定APIと本番サポート付きで一般提供した。",
+      "developerNote": "計画、ツール実行、ファイル編集、ストリーミング、複数ターンのセッションを6言語から利用でき、MCP、独自ツール、監視用トレースにも対応する。",
+      "terms": [
+        {
+          "term": "OpenTelemetry",
+          "meaning": "アプリの処理経路、性能、エラーを共通形式で収集・追跡するための標準技術。"
+        },
+        {
+          "term": "エージェント実行基盤",
+          "meaning": "AIが計画し、ツールを呼び出し、複数手順の作業を進めるための仕組み。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-02-copilot-sdk-is-now-generally-available/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-06-02",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "GitHub Copilotアプリの技術プレビューを既存顧客へ拡大",
+      "summary": "GitHubはCopilotアプリの技術プレビューを既存のPro、Pro+、Business、Enterprise顧客へ拡大し、キャンバス、クラウド実行、自動化を追加した。",
+      "developerNote": "人とエージェントが同じキャンバスで計画や成果物を編集・承認できる。クラウドセッション、定期自動化、統合ブラウザによる画面検証にも対応する。",
+      "terms": [
+        {
+          "term": "キャンバス",
+          "meaning": "人とAIエージェントが作業状態や成果物を共有し、直接編集や承認を行う操作面。"
+        },
+        {
+          "term": "クラウド自動化",
+          "meaning": "手元の端末を起動していなくても、クラウド上で定期作業を実行する仕組み。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-06-02-expanded-technical-preview-availability-for-the-github-copilot-app/"
+    },
+    {
+      "source": "Microsoft",
+      "date": "2026-06-02",
+      "category": "モデル・エージェント基盤",
+      "group": "dev",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Microsoftが独自MAIモデル群とAgent Platformを発表",
+      "summary": "MicrosoftはBuild 2026で、推論モデルMAI-Thinking-1を含む7つの独自モデル群と、企業知識を使うMicrosoft Agent Platformを発表した。",
+      "developerNote": "MAI-Code-1はCopilotとVS Codeで利用可能。MAI-Thinking-1や企業データで強化学習するFrontier Tuningは非公開プレビューのため、提供条件を確認したい。",
+      "terms": [
+        {
+          "term": "コンテキストウィンドウ",
+          "meaning": "モデルが一度の処理で参照できる入力情報の量。"
+        },
+        {
+          "term": "強化学習",
+          "meaning": "行動結果への評価を使い、望ましい出力や判断を学習させる手法。"
+        }
+      ],
+      "url": "https://blogs.microsoft.com/blog/2026/06/02/microsoft-build-2026-be-yourself-at-work/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-02",
+      "category": "アカウント保護",
+      "group": "business",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "ChatGPTにアクティブセッション管理を追加",
+      "summary": "OpenAIは、ChatGPTの設定から利用中の端末やアプリ、概算位置などを確認し、不審なセッションを個別または一括でログアウトできる機能を追加した。",
+      "developerNote": "ChatGPT、Codex、API Platformの既知セッションを確認できる。第三者アプリやCodex CLIは対象外のため、別途認証情報の管理が必要。",
+      "terms": [
+        {
+          "term": "アクティブセッション",
+          "meaning": "アカウントへログイン済みで、現在も有効な端末やアプリの接続状態。"
+        }
+      ],
+      "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-02",
+      "category": "業務エージェント",
+      "group": "business",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Codexに職種別プラグイン、Sites、注釈編集を追加",
+      "summary": "OpenAIはCodexに、職種別プラグイン、共有可能なSites、作成物へ直接指示できる注釈編集を追加した。",
+      "developerNote": "分析、営業、デザイン、投資、クリエイティブなど非開発者向け作業が広がる。SitesはBusiness/Enterprise向けプレビューのため、共有範囲、権限、生成物のレビュー運用を先に決めたい。",
+      "terms": [
+        {
+          "term": "Sites",
+          "meaning": "Codexが作成し、ワークスペース内でURL共有できる対話型のWebサイトや軽量アプリ。"
+        },
+        {
+          "term": "注釈編集",
+          "meaning": "作成物の特定箇所を選んで、そこだけをAIに修正させる操作。"
+        }
+      ],
+      "url": "https://openai.com/index/codex-for-every-role-tool-workflow/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-06-01",
+      "category": "クラウド提供",
+      "group": "business",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "OpenAIのフロンティアモデルとCodexがAWSで一般提供",
+      "summary": "OpenAIは、フロンティアモデルとCodexをAWS上で一般提供し、Amazon BedrockやAWSの統制・請求・調達ワークフローから利用できるようにした。",
+      "developerNote": "既存のAWSセキュリティ、ガバナンス、調達プロセスにOpenAIモデルとCodexを載せられるため、企業導入の障壁が下がる。GovCloudや将来のDaybreak展開も示されており、規制業界の導入経路として重要。",
+      "terms": [
+        {
+          "term": "Amazon Bedrock",
+          "meaning": "AWS上で複数の基盤モデルを利用し、企業向けのセキュリティや運用管理と組み合わせられるサービス。"
+        },
+        {
+          "term": "GovCloud",
+          "meaning": "政府機関や規制業界向けに設計されたAWSの分離リージョン。"
+        }
+      ],
+      "url": "https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws/"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-05-28",
+      "category": "モデル",
+      "group": "text",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Claude Opus 4.8を同価格で正式提供",
+      "summary": "AnthropicはClaude Opus 4.8を正式提供し、コーディング、エージェント作業、推論、長時間業務の性能と信頼性を改善した。",
+      "developerNote": "通常料金はOpus 4.7と同じ。Claude Codeでは数百のサブエージェントを並列実行するDynamic workflowsを研究プレビューで追加し、APIではタスク途中の指示更新にも対応した。",
+      "terms": [
+        {
+          "term": "Dynamic workflows",
+          "meaning": "Claude Codeが大規模な作業を計画し、多数のサブエージェントへ分担して結果を検証する研究プレビュー機能。"
+        },
+        {
+          "term": "サブエージェント",
+          "meaning": "大きな作業の一部を担当し、主エージェントへ結果を返す補助的なAIエージェント。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/claude-opus-4-8"
+    },
+    {
+      "source": "Mistral AI",
+      "date": "2026-05-28",
+      "category": "統合エージェント",
+      "group": "agent",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "MistralがVibeを仕事とコードの統合エージェントへ刷新",
+      "summary": "Mistral AIは、Le ChatをVibeへ統合し、Work Mode、Code Mode、VS Code拡張、CLI更新を含む長時間タスク向けエージェントとして提供した。",
+      "developerNote": "業務文書、検索、データ分析、スケジュール実行と、リモート coding agent を同じライセンス・履歴・設定で扱う方向に進んだ。権限がセッション単位で管理されるため、企業導入では接続先と承認フローの設計が重要になる。",
+      "terms": [
+        {
+          "term": "Work Mode",
+          "meaning": "メール、カレンダー、文書、データなどを横断して複数段階の業務タスクを実行するVibeのモード。"
+        },
+        {
+          "term": "Code Mode",
+          "meaning": "GitHub連携やサンドボックスを使い、コード変更からプルリクエストまで進めるVibeの開発者向けモード。"
+        }
+      ],
+      "url": "https://mistral.ai/news/vibe-agent"
+    },
+    {
+      "source": "Mistral AI",
+      "date": "2026-05-28",
+      "category": "業務エージェント",
+      "group": "business",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Mistralが長時間業務エージェントVibeを統合",
+      "summary": "Mistral AIはAI Now Summitで、メールや予定、調査、成果物作成、コード変更までを長時間・複数手順で進める統合エージェントVibeを発表した。",
+      "developerNote": "一般業務とコード開発を同じエージェントへ統合する方向性。産業向けAI基盤や自社推論設備も含め、データと運用の制御を重視している。",
+      "terms": [
+        {
+          "term": "長時間エージェント",
+          "meaning": "短い応答だけでなく、複数の手順や確認を伴う作業を継続して進めるAIエージェント。"
+        },
+        {
+          "term": "推論設備",
+          "meaning": "学習済みAIモデルを動かして回答や処理結果を生成するための計算基盤。"
+        }
+      ],
+      "url": "https://mistral.ai/news/ai-now-summit-2026/"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-05-18",
+      "category": "開発基盤",
+      "group": "dev",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "AnthropicがSDK・MCP toolingのStainlessを買収",
+      "summary": "Anthropicは、公式SDK生成やMCPサーバーツールを手がけるStainlessの買収を発表した。",
+      "developerNote": "Claude APIやMCP接続の開発者体験が強化される流れ。エージェントが外部APIや社内ツールへ安全につながるための基盤として注目。",
+      "terms": [
+        {
+          "term": "SDK",
+          "meaning": "特定サービスをアプリから使いやすくするための開発用ライブラリ。"
+        },
+        {
+          "term": "MCP",
+          "meaning": "AIエージェントが外部ツールやデータへ接続するための共通プロトコル。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/anthropic-acquires-stainless"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-18",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Actions失敗をCopilotクラウドエージェントでワンクリック修正",
+      "summary": "GitHubは、Actionsの失敗ログ画面からCopilotクラウドエージェントへ修正を依頼できる機能を追加した。",
+      "developerNote": "テスト失敗やlint失敗のような定型的な修正をCI画面から直接委譲でき、レビュー待ちの流れまで短縮できる。",
+      "terms": [
+        {
+          "term": "GitHub Actions",
+          "meaning": "ビルド、テスト、デプロイなどを自動実行するGitHubの仕組み。"
+        },
+        {
+          "term": "クラウドエージェント",
+          "meaning": "クラウド上の開発環境で調査や修正を進めるAIエージェント。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-05-18-one-click-fixes-for-failing-actions-with-copilot-cloud-agent/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-18",
+      "category": "組織管理",
+      "group": "business",
+      "type": "feature",
+      "priority": "medium",
+      "status": "preview",
+      "title": "Copilotクラウドエージェント設定をREST APIで監査可能に",
+      "summary": "GitHubは、リポジトリごとのCopilotクラウドエージェント設定を取得するREST APIを公開プレビューで追加した。",
+      "developerNote": "MCPサーバー、許可ツール、Actionsポリシー、ファイアウォール設定を横断監査できるため、エージェント導入時の統制に使える。",
+      "terms": [
+        {
+          "term": "公開プレビュー",
+          "meaning": "正式提供前に対象ユーザーが試せる提供段階。仕様変更の可能性がある。"
+        },
+        {
+          "term": "REST API",
+          "meaning": "外部プログラムからサービスの情報を取得・操作するための一般的なAPI形式。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-05-18-audit-repository-copilot-cloud-agent-configuration-via-the-rest-api/"
+    },
+    {
+      "source": "GitHub",
+      "date": "2026-05-18",
+      "category": "コード支援",
+      "group": "dev",
+      "type": "feature",
+      "priority": "medium",
+      "status": "stable",
+      "title": "GitHub Web上の文脈付きCopilotチャットが一般提供",
+      "summary": "GitHubは、IssueやPull Requestなど閲覧中の画面を文脈として扱うCopilotチャットを全Copilotプランで一般提供した。",
+      "developerNote": "リポジトリ、Issue、PRを横断して質問しやすくなり、調査からPR作成や深い調査への移行も自然になる。",
+      "terms": [
+        {
+          "term": "コンテキスト",
+          "meaning": "AIが回答や作業の前提として参照する画面、ファイル、Issue、PRなどの情報。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-05-18-ask-questions-in-context-with-copilot-on-web/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-18",
+      "category": "企業向けAI",
+      "group": "business",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Dell連携でCodexをハイブリッド・オンプレ環境へ拡張",
+      "summary": "OpenAIとDell Technologiesは、Codexを企業のハイブリッド環境やオンプレミス環境に近づける連携を発表した。",
+      "developerNote": "機密データや社内システムの近くでエージェントを動かしたい企業向けに、ガバナンス、接続先、実行環境の設計が重要になる。",
+      "terms": [
+        {
+          "term": "オンプレミス",
+          "meaning": "クラウドではなく、自社施設や管理下の環境にサーバーやデータを置く運用形態。"
+        },
+        {
+          "term": "ハイブリッド環境",
+          "meaning": "クラウドと自社管理環境を組み合わせて使う構成。"
+        }
+      ],
+      "url": "https://openai.com/index/dell-codex-enterprise-partnership/"
+    },
     {
       "source": "OpenAI",
       "date": "2026-05-16",
@@ -22,28 +1496,23 @@
       "url": "https://openai.com/index/malta-chatgpt-plus-partnership/"
     },
     {
-      "source": "OpenAI",
+      "source": "GitHub",
       "date": "2026-05-15",
-      "category": "企業向けAI",
-      "group": "business",
-      "type": "model",
-      "priority": "high",
-      "mustRead": true,
-      "status": "stable",
-      "title": "DatabricksがGPT-5.5を企業エージェント業務に導入",
-      "summary": "Databricksは、複雑な企業文書タスク向け評価でGPT-5.5がGPT-5.4より誤りを46%減らしたと説明。",
-      "developerNote": "スキャンPDFや長文文書を扱う業務エージェントでは、検索だけでなく解析と根拠づけの性能を見る必要がある。",
+      "category": "コード支援",
+      "group": "dev",
+      "type": "feature",
+      "priority": "medium",
+      "status": "preview",
+      "title": "Copilot Memoryが個人の好みを記憶",
+      "summary": "GitHubはCopilot Memoryで、ProとPro+ユーザー向けに個人のコミット形式やPRの好みを保存できる早期アクセスを開始。",
+      "developerNote": "リポジトリ単位ではなくユーザー単位の記憶なので、複数リポジトリで一貫した作業スタイルを反映できる。",
       "terms": [
         {
-          "term": "エージェント",
-          "meaning": "複数の手順やツール利用を自律的に進めるAIの使い方。"
-        },
-        {
-          "term": "ベンチマーク",
-          "meaning": "性能を比べるための評価テスト。"
+          "term": "早期アクセス",
+          "meaning": "正式展開前に一部ユーザーへ先行提供する段階。"
         }
       ],
-      "url": "https://openai.com/index/databricks/"
+      "url": "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users/"
     },
     {
       "source": "OpenAI",
@@ -70,51 +1539,27 @@
     },
     {
       "source": "OpenAI",
-      "date": "2026-05-14",
-      "category": "開発ツール",
-      "group": "dev",
-      "type": "feature",
-      "priority": "high",
-      "mustRead": true,
-      "status": "preview",
-      "title": "Codexをスマホから操作できるように",
-      "summary": "OpenAIはChatGPTモバイルアプリでCodexを操作できるプレビューを発表。外出先から承認、確認、方針変更ができる。",
-      "developerNote": "長時間実行する開発エージェントでは、PC前にいない時間の承認や差分確認が運用上の差になる。",
-      "terms": [
-        {
-          "term": "リレー層",
-          "meaning": "PCを直接公開せず、別端末から状態を同期する中継の仕組み。"
-        },
-        {
-          "term": "Remote SSH",
-          "meaning": "別の開発用マシンへ安全に接続して作業する仕組み。"
-        }
-      ],
-      "url": "https://openai.com/index/work-with-codex-from-anywhere/"
-    },
-    {
-      "source": "OpenAI",
-      "date": "2026-05-13",
-      "category": "セキュリティ",
-      "group": "dev",
-      "type": "security",
+      "date": "2026-05-15",
+      "category": "企業向けAI",
+      "group": "business",
+      "type": "model",
       "priority": "high",
       "mustRead": true,
       "status": "stable",
-      "title": "TanStack npm供給網攻撃への対応",
-      "summary": "OpenAIはTanStack関連の供給網攻撃を受け、macOSアプリの証明書更新と旧バージョンのサポート終了予定を案内。",
-      "developerNote": "OpenAI、ChatGPT、Codex系アプリは公式配布元から更新。社内端末のバージョン棚卸し候補。",
+      "title": "DatabricksがGPT-5.5を企業エージェント業務に導入",
+      "summary": "Databricksは、複雑な企業文書タスク向け評価でGPT-5.5がGPT-5.4より誤りを46%減らしたと説明。",
+      "developerNote": "スキャンPDFや長文文書を扱う業務エージェントでは、検索だけでなく解析と根拠づけの性能を見る必要がある。",
       "terms": [
         {
-          "term": "供給網攻撃",
-          "meaning": "利用している外部ライブラリや配布経路を狙う攻撃。"
+          "term": "エージェント",
+          "meaning": "複数の手順やツール利用を自律的に進めるAIの使い方。"
         },
         {
-          "term": "npm",
-          "meaning": "JavaScriptの部品を配布する仕組み。"
+          "term": "ベンチマーク",
+          "meaning": "性能を比べるための評価テスト。"
         }
       ],
-      "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/"
+      "url": "https://openai.com/index/databricks/"
     },
     {
       "source": "Vercel",
@@ -141,25 +1586,6 @@
       "url": "https://vercel.com/changelog/sort-providers-by-cost-latency-or-throughput-on-ai-gateway"
     },
     {
-      "source": "GitHub",
-      "date": "2026-05-15",
-      "category": "コード支援",
-      "group": "dev",
-      "type": "feature",
-      "priority": "medium",
-      "status": "preview",
-      "title": "Copilot Memoryが個人の好みを記憶",
-      "summary": "GitHubはCopilot Memoryで、ProとPro+ユーザー向けに個人のコミット形式やPRの好みを保存できる早期アクセスを開始。",
-      "developerNote": "リポジトリ単位ではなくユーザー単位の記憶なので、複数リポジトリで一貫した作業スタイルを反映できる。",
-      "terms": [
-        {
-          "term": "早期アクセス",
-          "meaning": "正式展開前に一部ユーザーへ先行提供する段階。"
-        }
-      ],
-      "url": "https://github.blog/changelog/2026-05-15-copilot-memory-supports-user-preferences-for-pro-pro-users/"
-    },
-    {
       "source": "Anthropic",
       "date": "2026-05-14",
       "category": "社会実装",
@@ -181,25 +1607,21 @@
     {
       "source": "GitHub",
       "date": "2026-05-14",
-      "category": "管理機能",
-      "group": "business",
+      "category": "開発エージェント",
+      "group": "dev",
       "type": "feature",
       "priority": "medium",
       "status": "stable",
-      "title": "チーム別Copilot利用指標をAPIで取得可能に",
-      "summary": "GitHubはCopilot利用指標APIにチーム所属レポートを追加し、チーム別の利用状況を集計できるようにした。",
-      "developerNote": "Copilot導入後の利用差、活用チーム、支援が必要なチームをREST APIで分析しやすくなる。",
+      "title": "Copilotクラウドエージェントがモデル自動選択に対応",
+      "summary": "GitHubはCopilotクラウドエージェントで、利用可能なモデルから状態や性能に応じて自動選択する機能を追加。",
+      "developerNote": "手動でモデルを選ぶより、稼働状況や性能を見た自動選択で長時間タスクの安定性を狙える。",
       "terms": [
         {
-          "term": "REST API",
-          "meaning": "外部プログラムからサービスの情報を取得・操作するための一般的なAPI形式。"
-        },
-        {
-          "term": "NDJSON",
-          "meaning": "1行ごとにJSONを書く、ログや大量データ向けの形式。"
+          "term": "クラウドエージェント",
+          "meaning": "手元のPCではなくクラウド上の開発環境で作業するAIエージェント。"
         }
       ],
-      "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api/"
+      "url": "https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection/"
     },
     {
       "source": "GitHub",
@@ -227,21 +1649,49 @@
     {
       "source": "GitHub",
       "date": "2026-05-14",
-      "category": "開発エージェント",
-      "group": "dev",
+      "category": "管理機能",
+      "group": "business",
       "type": "feature",
       "priority": "medium",
       "status": "stable",
-      "title": "Copilotクラウドエージェントがモデル自動選択に対応",
-      "summary": "GitHubはCopilotクラウドエージェントで、利用可能なモデルから状態や性能に応じて自動選択する機能を追加。",
-      "developerNote": "手動でモデルを選ぶより、稼働状況や性能を見た自動選択で長時間タスクの安定性を狙える。",
+      "title": "チーム別Copilot利用指標をAPIで取得可能に",
+      "summary": "GitHubはCopilot利用指標APIにチーム所属レポートを追加し、チーム別の利用状況を集計できるようにした。",
+      "developerNote": "Copilot導入後の利用差、活用チーム、支援が必要なチームをREST APIで分析しやすくなる。",
       "terms": [
         {
-          "term": "クラウドエージェント",
-          "meaning": "手元のPCではなくクラウド上の開発環境で作業するAIエージェント。"
+          "term": "REST API",
+          "meaning": "外部プログラムからサービスの情報を取得・操作するための一般的なAPI形式。"
+        },
+        {
+          "term": "NDJSON",
+          "meaning": "1行ごとにJSONを書く、ログや大量データ向けの形式。"
         }
       ],
-      "url": "https://github.blog/changelog/2026-05-14-copilot-cloud-agent-supports-auto-model-selection/"
+      "url": "https://github.blog/changelog/2026-05-14-team-level-copilot-usage-metrics-now-available-via-api/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-14",
+      "category": "開発ツール",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Codexをスマホから操作できるように",
+      "summary": "OpenAIはChatGPTモバイルアプリでCodexを操作できるプレビューを発表。外出先から承認、確認、方針変更ができる。",
+      "developerNote": "長時間実行する開発エージェントでは、PC前にいない時間の承認や差分確認が運用上の差になる。",
+      "terms": [
+        {
+          "term": "リレー層",
+          "meaning": "PCを直接公開せず、別端末から状態を同期する中継の仕組み。"
+        },
+        {
+          "term": "Remote SSH",
+          "meaning": "別の開発用マシンへ安全に接続して作業する仕組み。"
+        }
+      ],
+      "url": "https://openai.com/index/work-with-codex-from-anywhere/"
     },
     {
       "source": "GitHub",
@@ -265,6 +1715,100 @@
         }
       ],
       "url": "https://github.blog/changelog/2026-05-13-start-copilot-cloud-agent-tasks-via-the-rest-api/"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-13",
+      "category": "セキュリティ",
+      "group": "dev",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "TanStack npm供給網攻撃への対応",
+      "summary": "OpenAIはTanStack関連の供給網攻撃を受け、macOSアプリの証明書更新と旧バージョンのサポート終了予定を案内。",
+      "developerNote": "OpenAI、ChatGPT、Codex系アプリは公式配布元から更新。社内端末のバージョン棚卸し候補。",
+      "terms": [
+        {
+          "term": "供給網攻撃",
+          "meaning": "利用している外部ライブラリや配布経路を狙う攻撃。"
+        },
+        {
+          "term": "npm",
+          "meaning": "JavaScriptの部品を配布する仕組み。"
+        }
+      ],
+      "url": "https://openai.com/index/our-response-to-the-tanstack-npm-supply-chain-attack/"
+    },
+    {
+      "source": "Google DeepMind",
+      "date": "2026-05-12",
+      "category": "AIインターフェース",
+      "group": "media",
+      "type": "feature",
+      "priority": "medium",
+      "status": "preview",
+      "title": "Geminiでポインター操作をAIインターフェース化する研究",
+      "summary": "Google DeepMindは、画面上で指し示した対象と音声・文脈を組み合わせてAIへ依頼できるポインター型UIの研究を紹介した。",
+      "developerNote": "長いプロンプトではなく、指差し、選択、音声を組み合わせるUI設計が進む。業務アプリでも文脈取得と権限確認が重要になる。",
+      "terms": [
+        {
+          "term": "AIインターフェース",
+          "meaning": "人がAIへ指示し、AIの結果を受け取るための操作画面や操作方法。"
+        },
+        {
+          "term": "Gemini",
+          "meaning": "GoogleのAIモデル群。文章、画像、音声など複数の情報を扱える。"
+        }
+      ],
+      "url": "https://deepmind.google/blog/ai-pointer/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-05-12",
+      "category": "AI基盤",
+      "group": "business",
+      "type": "business",
+      "priority": "medium",
+      "status": "stable",
+      "title": "AI Gatewayの本番利用データを公開",
+      "summary": "VercelはAI Gatewayの本番トラフィック分析を公開。エージェント型ワークロードが全トークン量の59%を占めると説明。",
+      "developerNote": "実運用では単一モデル固定より、複数モデルと複数提供元を使い分ける前提が強くなっている。",
+      "terms": [
+        {
+          "term": "トークン",
+          "meaning": "AIが文章を処理するときの細かい単位。利用量や料金の基準になる。"
+        },
+        {
+          "term": "本番ワークロード",
+          "meaning": "実際のユーザーや業務で動いている処理。"
+        }
+      ],
+      "url": "https://vercel.com/blog/ai-gateway-production-index"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-05-07",
+      "category": "音声API",
+      "group": "media",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "APIに新しいリアルタイム音声モデルを追加",
+      "summary": "OpenAIは推論、翻訳、文字起こしに対応するリアルタイム音声モデルをAPIに追加した。",
+      "developerNote": "音声UIでは、翻訳、文字起こし、ツール実行、長い会話文脈をまとめて設計できるようになる。",
+      "terms": [
+        {
+          "term": "リアルタイム音声",
+          "meaning": "話している最中に理解や応答を進める音声処理。"
+        },
+        {
+          "term": "文字起こし",
+          "meaning": "音声をテキストに変換すること。"
+        }
+      ],
+      "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/"
     },
     {
       "source": "Mistral AI",
@@ -337,53 +1881,6 @@
         }
       ],
       "url": "https://www.anthropic.com/news/claude-opus-4-7"
-    },
-    {
-      "source": "OpenAI",
-      "date": "2026-05-07",
-      "category": "音声API",
-      "group": "media",
-      "type": "feature",
-      "priority": "high",
-      "mustRead": true,
-      "status": "stable",
-      "title": "APIに新しいリアルタイム音声モデルを追加",
-      "summary": "OpenAIは推論、翻訳、文字起こしに対応するリアルタイム音声モデルをAPIに追加した。",
-      "developerNote": "音声UIでは、翻訳、文字起こし、ツール実行、長い会話文脈をまとめて設計できるようになる。",
-      "terms": [
-        {
-          "term": "リアルタイム音声",
-          "meaning": "話している最中に理解や応答を進める音声処理。"
-        },
-        {
-          "term": "文字起こし",
-          "meaning": "音声をテキストに変換すること。"
-        }
-      ],
-      "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api/"
-    },
-    {
-      "source": "Vercel",
-      "date": "2026-05-12",
-      "category": "AI基盤",
-      "group": "business",
-      "type": "business",
-      "priority": "medium",
-      "status": "stable",
-      "title": "AI Gatewayの本番利用データを公開",
-      "summary": "VercelはAI Gatewayの本番トラフィック分析を公開。エージェント型ワークロードが全トークン量の59%を占めると説明。",
-      "developerNote": "実運用では単一モデル固定より、複数モデルと複数提供元を使い分ける前提が強くなっている。",
-      "terms": [
-        {
-          "term": "トークン",
-          "meaning": "AIが文章を処理するときの細かい単位。利用量や料金の基準になる。"
-        },
-        {
-          "term": "本番ワークロード",
-          "meaning": "実際のユーザーや業務で動いている処理。"
-        }
-      ],
-      "url": "https://vercel.com/blog/ai-gateway-production-index"
     },
     {
       "source": "OpenAI",
