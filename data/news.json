@@ -3,6 +3,78 @@
   "policy": "official-sources-only",
   "items": [
     {
+      "source": "OpenAI",
+      "date": "2026-07-08",
+      "category": "評価基盤",
+      "group": "research",
+      "type": "policy",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "OpenAIがSWE-Bench Proの約3割に破綻タスクがあると指摘",
+      "summary": "OpenAIは、コーディング評価ベンチマークSWE-Bench Proを監査し、公開分割731タスクのうち約30%に破綻があると推定した。過度に厳しいテスト、仕様不足のプロンプト、低カバレッジのテスト、誤解を招く指示が主な問題として示され、同ベンチマーク採用の推奨を撤回した。",
+      "developerNote": "エージェント性能の比較値をそのまま信じず、評価データの品質と失敗理由を検証する必要がある。モデル選定、導入判断、安全性評価でSWE系スコアを使う場合は、壊れたタスク混入による過大・過小評価を織り込むべき。",
+      "terms": [
+        {
+          "term": "SWE-Bench Pro",
+          "meaning": "ソフトウェア開発タスクでAIモデルやエージェントの実装能力を測るベンチマーク。"
+        },
+        {
+          "term": "低カバレッジテスト",
+          "meaning": "必要な機能や条件を十分に確認できず、不完全な実装でも合格してしまう可能性があるテスト。"
+        }
+      ],
+      "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-08",
+      "category": "エンタープライズ統制",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Copilot設定をMDM経由でVS CodeとCLIへ配布可能に",
+      "summary": "GitHub Copilotは、VS CodeとCopilot CLI向けの管理設定をMDMやファイルベース設定で端末へ直接配布できるようにした。Microsoft Intune、Jamf、グループポリシー、Chef、Puppet、Ansibleなどの既存端末管理経路から、モデル、プラグイン、Marketplace制御、Telemetry設定などを統制できる。",
+      "developerNote": "組織のCopilot統制をサインイン後のサーバ設定だけに依存せず、端末管理ポリシーとして強制できる。開発端末の標準化、プラグイン制限、監査設定をセキュリティ部門の既存運用へ寄せやすい。",
+      "terms": [
+        {
+          "term": "MDM",
+          "meaning": "Mobile Device Managementの略。企業がPCやモバイル端末の設定、制限、アプリ配布を集中管理する仕組み。"
+        },
+        {
+          "term": "managed-settings.json",
+          "meaning": "GitHub Copilotの管理対象設定をJSON形式で端末や組織に配布するための設定ファイル。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-08-deploy-managed-copilot-settings-via-mdm-in-vs-code-and-cli/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-08",
+      "category": "開発環境",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "VS Code版Copilotが並列セッション、コスト可視化、Marketplaceモデル発見を強化",
+      "summary": "GitHub Copilotは、VS Code 1.123から1.127までの更新として、統合ブラウザ、並列エージェントセッション、セッション単位のコスト可視化、Marketplaceからのモデルプロバイダー発見、Autopilot改善をまとめて公開した。1Mコンテキスト対応モデルやMCP OAuth資格情報の管理も含まれる。",
+      "developerNote": "VS Code内で複数のエージェント作業を並べ、使用量やモデル選択を確認しながら進める運用が現実的になっている。大規模コードベースでは、長文コンテキストと資格情報管理の扱いが導入設計の焦点になる。",
+      "terms": [
+        {
+          "term": "Autopilot",
+          "meaning": "GitHub Copilotの権限レベルの一つで、都度確認を減らしてエージェントに自律的な作業継続を許可するモード。"
+        },
+        {
+          "term": "MCP OAuth",
+          "meaning": "Model Context Protocol連携で外部サービスへ安全に接続するため、OAuth認証情報を扱う仕組み。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-08-github-copilot-in-visual-studio-code-june-2026-releases/"
+    },
+    {
       "source": "GitHub Copilot",
       "date": "2026-07-08",
       "category": "エンタープライズ統制",
@@ -97,6 +169,50 @@
         }
       ],
       "url": "https://vercel.com/changelog/eve-chat-sdk-channel"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-07",
+      "category": "利用分析",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Copilot利用メトリクスAPIがレビュー速度とレビューサイクルを追加",
+      "summary": "GitHub Copilotの利用メトリクスAPIは、AI導入フェーズ別レポートにプルリクエストの初回レビューまでの中央値時間と、マージ前レビューサイクル数の中央値を追加した。EnterpriseとOrganizationの1日・28日レポートで利用できる。",
+      "developerNote": "Copilot導入効果をコード生成量だけでなく、レビュー待ち時間や反復回数という開発フロー指標で追えるようになる。導入段階ごとのボトルネック把握や有効化施策の優先順位付けに使いやすい。",
+      "terms": [
+        {
+          "term": "AI導入フェーズ",
+          "meaning": "チームやユーザーのAI利用状況を段階別に分け、導入の深さごとに効果を比較するための分類。"
+        },
+        {
+          "term": "レビューサイクル",
+          "meaning": "プルリクエストがマージされるまでに行われるレビュー提出や修正反復の回数。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-07-add-review-cycles-and-time-to-adoption-phases-in-the-usage-api/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-07",
+      "category": "デスクトップエージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilotアプリが全Copilotプランで利用可能に",
+      "summary": "GitHub Copilotのデスクトップアプリは、Copilot FreeとGitHub Educationを含むすべてのCopilotプランで利用可能になった。Copilot契約がない場合でも、BYOKで自分のモデルプロバイダーを使ったセッション実行ができる。",
+      "developerNote": "クラウドやIDE拡張だけでなく、独立したデスクトップアプリとしてエージェント開発を始められる入口が広がった。企業プランではCopilot CLIポリシー有効化が必要なため、展開前に管理設定を確認したい。",
+      "terms": [
+        {
+          "term": "BYOK",
+          "meaning": "Bring Your Own Keyの略。利用者が自分のAPIキーや契約済みモデルプロバイダーを持ち込む方式。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-07-github-copilot-app-available-to-all/"
     },
     {
       "source": "GitHub Copilot",
@@ -233,6 +349,30 @@
         }
       ],
       "url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/"
+    },
+    {
+      "source": "Cursor",
+      "date": "2026-06-30",
+      "category": "チーム統制",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "CursorがTeam MarketplaceでTeam MCPと組織グループ配布に対応",
+      "summary": "Cursor 3.10は、Team MarketplaceでTeam MCPサーバーと組織グループを扱えるようにした。管理者はDashboardのIntegrations & MCPでクラウドエージェント、Agents Window、IDE、CLI向けにTeam MCPを設定し、承認済み統合をチームへ配布できる。",
+      "developerNote": "MCP連携を個人設定任せにせず、組織が承認したサーバーとMarketplaceアクセスを配布できる。エージェントに社内システム接続を許可する場合、権限境界と配布対象グループを設計しやすくなる。",
+      "terms": [
+        {
+          "term": "Team MCP",
+          "meaning": "チーム管理者が設定し、複数のCursor利用者やエージェント環境へ配布できるMCPサーバー設定。"
+        },
+        {
+          "term": "Team Marketplace",
+          "meaning": "組織やチームが承認したプラグイン、MCP、関連ツールをメンバーに配布するためのCursorの仕組み。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/team-marketplace-updates"
     },
     {
       "source": "Anthropic",
