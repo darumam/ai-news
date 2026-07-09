@@ -423,6 +423,30 @@
       "url": "https://www.anthropic.com/news/claude-science-ai-workbench"
     },
     {
+      "source": "Cursor",
+      "date": "2026-06-29",
+      "category": "モバイルエージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "beta",
+      "title": "CursorがiOSアプリを公開ベータで提供",
+      "summary": "Cursor 3.9は、すべての有料プラン向けにCursor for iOSを公開ベータ提供した。スマートフォンからリポジトリを選んでクラウドエージェントを起動し、音声入力、slash command、Remote Control、Live Activities、プッシュ通知で進行中のエージェントを操作できる。",
+      "developerNote": "開発エージェントがIDE内だけでなく、外出先からの承認、差分確認、追加入力、PRマージまでつながる運用へ進んでいる。チーム利用ではRemote Controlの管理者有効化と、モバイルから扱えるリポジトリ権限の整理が重要。",
+      "terms": [
+        {
+          "term": "Remote Control",
+          "meaning": "PC上で動くCursorエージェントを、別端末から継続操作するための機能。"
+        },
+        {
+          "term": "Live Activities",
+          "meaning": "iOSのロック画面などで進行状況を継続表示する通知機能。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/ios-mobile-app"
+    },
+    {
       "source": "GitHub Copilot",
       "date": "2026-06-26",
       "category": "モデル",
@@ -763,6 +787,30 @@
       "url": "https://github.blog/changelog/2026-06-23-github-copilot-app-support-for-byok/"
     },
     {
+      "source": "Cursor",
+      "date": "2026-06-22",
+      "category": "開発環境拡張",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "CursorがCustomize画面でプラグイン、スキル、MCPを一元管理",
+      "summary": "Cursor 3.9は、Customize画面を追加し、プラグイン、スキル、MCP、サブエージェント、ルール、コマンド、hooksをユーザー、チーム、ワークスペース単位で管理できるようにした。チーム内の人気ランキングや、GitLab、BitBucket、Azure DevOpsからのTeam Marketplace取り込みにも対応した。",
+      "developerNote": "Cursorの拡張が個人の設定ファイルから、チーム配布とマーケットプレイス運用へ寄っている。社内標準のMCP、コマンド、hooksを配布する場合は、承認済み拡張とワークスペース権限をセットで設計したい。",
+      "terms": [
+        {
+          "term": "hooks",
+          "meaning": "特定の操作やイベントに合わせて、自動的に処理やコマンドを実行する仕組み。"
+        },
+        {
+          "term": "Team Marketplace",
+          "meaning": "組織やチームが承認した拡張機能をメンバーへ配布するためのCursorの仕組み。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/customize"
+    },
+    {
       "source": "OpenAI",
       "date": "2026-06-22",
       "category": "セキュリティ自動化",
@@ -785,6 +833,30 @@
         }
       ],
       "url": "https://openai.com/index/daybreak-securing-the-world/"
+    },
+    {
+      "source": "Cursor",
+      "date": "2026-06-18",
+      "category": "自動化",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Cursor AutomationsがGitHub/Slackトリガーとcomputer useに対応",
+      "summary": "Cursor 3.8は、常時稼働エージェント向けAutomationsに/automateスキル、Slack絵文字トリガー、5種類のGitHubトリガー、computer use toolを追加した。Issueコメント、PRレビューコメント、PRレビュー提出、レビューthread更新、GitHub Actions完了を起点に自動処理できる。",
+      "developerNote": "PRレビュー対応、CI失敗調査、デモ生成までを常時稼働エージェントへ委譲しやすくなった。自動でPRを開けるため、リポジトリ権限、承認フロー、生成物の確認責任を運用ルールに落とし込む必要がある。",
+      "terms": [
+        {
+          "term": "computer use",
+          "meaning": "クラウド上のエージェントがブラウザや画面操作を行い、デモや成果物を作成できる機能。"
+        },
+        {
+          "term": "GitHubトリガー",
+          "meaning": "Issue、Pull Request、レビュー、ActionsなどのGitHubイベントをきっかけに自動処理を開始する設定。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/06-18-26"
     },
     {
       "source": "Google DeepMind",
@@ -833,6 +905,30 @@
         }
       ],
       "url": "https://openai.com/index/chatgpt-enterprise-spend-controls/"
+    },
+    {
+      "source": "Cursor",
+      "date": "2026-06-17",
+      "category": "クラウドエージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Cursorがクラウド環境セットアップとクラウドサブエージェントを強化",
+      "summary": "Cursor 3.7は、Agents Windowのクラウドエージェントを強化し、クラウド開発環境のセットアップ支援、再利用可能な環境スナップショット、/in-cloudでのクラウドサブエージェント起動、ローカルとクラウド間のhandoffに対応した。",
+      "developerNote": "長時間の調査、CI修正、並列作業をローカル作業ツリーから分離しやすくなる。`.cursor/environment.json`をチームで管理する場合、依存関係、秘密情報、セットアップコマンドの扱いを明確にしておきたい。",
+      "terms": [
+        {
+          "term": "クラウドサブエージェント",
+          "meaning": "親エージェントとは別のクラウドVMとブランチで、並列に作業するCursorエージェント。"
+        },
+        {
+          "term": "handoff",
+          "meaning": "エージェント作業をローカル環境とクラウド環境の間で引き継ぐこと。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/cloud-in-agents-window"
     },
     {
       "source": "GitHub Copilot",

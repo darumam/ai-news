@@ -388,6 +388,10 @@ h2 {
   border-color: #6b7280;
 }
 
+.source-cursor {
+  border-color: #111827;
+}
+
 .source-mistral {
   border-color: #7c3aed;
 }
@@ -418,6 +422,11 @@ h2 {
 .must-read-card.source-github,
 .compact-news-item.source-github {
   border-left-color: #6b7280;
+}
+
+.must-read-card.source-cursor,
+.compact-news-item.source-cursor {
+  border-left-color: #111827;
 }
 
 .must-read-card.source-mistral,
@@ -453,6 +462,11 @@ h2 {
 .source-pill.source-github {
   background: #e5e7eb;
   color: #374151;
+}
+
+.source-pill.source-cursor {
+  background: #111827;
+  color: #ffffff;
 }
 
 .source-pill.source-mistral {

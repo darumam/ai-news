@@ -14,7 +14,7 @@ AIシグナルボードを更新してください。
 - README.md
 
 必須ルール:
-- OpenAI、Anthropic、Google DeepMind、Microsoft AI/Azure、GitHub Copilot、Mistral AI、Vercel AI関連の公式サイト、公式ブログ、公式ドキュメント、公式チェンジログだけを確認する。
+- OpenAI、Anthropic、Google DeepMind、Microsoft AI/Azure、GitHub Copilot、Mistral AI、Vercel AI、Cursor/Anysphere関連の公式サイト、公式ブログ、公式ドキュメント、公式チェンジログだけを確認する。
 - 二次メディア、SNS、噂、リーク、個人ブログは使わない。
 - ニュースは過去分を消さず、最新分を追加する。重複URLは追加しない。
 - 1回の更新で追加するニュースは最大6件。

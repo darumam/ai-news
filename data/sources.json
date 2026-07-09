@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updated": "2026-05-17",
+  "updated": "2026-05-19",
   "policy": "official-sources-only",
   "sources": [
     {
@@ -36,6 +36,15 @@
       "url": "https://github.blog/changelog/label/copilot/feed/",
       "allowedHosts": ["github.blog"],
       "limit": 5
+    },
+    {
+      "name": "Cursor Changelog",
+      "source": "Cursor",
+      "kind": "html",
+      "url": "https://cursor.com/changelog",
+      "allowedHosts": ["cursor.com"],
+      "limit": 5,
+      "includePathPrefixes": ["/changelog/"]
     },
     {
       "name": "Mistral AI News",

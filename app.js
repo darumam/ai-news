@@ -25,8 +25,10 @@
   const sourceClasses = {
     OpenAI: "source-openai",
     Anthropic: "source-anthropic",
+    "Google DeepMind": "source-google",
     "Google Gemini": "source-google",
     GitHub: "source-github",
+    Cursor: "source-cursor",
     "Mistral AI": "source-mistral",
     Vercel: "source-vercel",
     "Microsoft AI": "source-microsoft",
