@@ -1,7 +1,147 @@
 {
-  "lastUpdated": "2026-07-09",
+  "lastUpdated": "2026-07-12",
   "policy": "official-sources-only",
   "items": [
+    {
+      "source": "Cursor",
+      "date": "2026-07-10",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Cursor 3.11がサイドチャット、会話検索、クラウドエージェントフックを追加",
+      "summary": "Cursor 3.11は、メインのエージェント作業を止めずに並行調査できるサイドチャット、過去のエージェント会話を横断検索する機能、プロジェクトとリポジトリ選択UIの整理、クラウドエージェント会話を観測・制御する新しいフックを追加した。",
+      "developerNote": "長時間動くエージェント作業の横で確認や調査を分けられるため、作業中断や文脈混線を減らせる。チーム運用ではプロンプト、応答、思考、サブエージェント、停止などをフックで監視・制御できる点が重要。",
+      "terms": [
+        {
+          "term": "サイドチャット",
+          "meaning": "メイン会話とは別に並行して開ける補助会話。調査や確認を分け、必要に応じて後からメイン会話へ文脈を戻せる。"
+        },
+        {
+          "term": "クラウドエージェントフック",
+          "meaning": "クラウド上で動くエージェントの会話や実行イベントに対して、観測や制御処理を差し込む仕組み。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/side-chat"
+    },
+    {
+      "source": "OpenAI",
+      "date": "2026-07-09",
+      "category": "モデル提供",
+      "group": "model",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "OpenAIがGPT-5.6を一般提供しSol、Terra、Lunaの3階層で展開",
+      "summary": "OpenAIはGPT-5.6ファミリーを一般提供した。最上位のSol、日常業務向けのTerra、低コストのLunaをChatGPT、Codex、OpenAI APIへ順次展開し、Responses APIではプログラム型ツール呼び出しとマルチエージェントのベータ機能も利用できる。",
+      "developerNote": "コーディング、知識作業、サイバー防御、科学領域で性能とコスト効率を同時に押し上げる発表。導入時はモデル階層、推論努力量、キャッシュ課金、マルチエージェント利用時のコスト上限を設計に入れる必要がある。",
+      "terms": [
+        {
+          "term": "プログラム型ツール呼び出し",
+          "meaning": "モデルが軽量なプログラムを使ってツール結果を処理し、必要な情報だけを残しながら作業を進める仕組み。"
+        },
+        {
+          "term": "マルチエージェント",
+          "meaning": "複数のサブエージェントを並行実行し、その結果を統合して一つの回答や成果物にまとめる方式。"
+        }
+      ],
+      "url": "https://openai.com/index/gpt-5-6/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-09",
+      "category": "モデル提供",
+      "group": "dev",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub CopilotでGPT-5.6 Sol、Terra、Lunaが利用可能に",
+      "summary": "GitHub Copilotは、OpenAIのGPT-5.6 Sol、Terra、Lunaを順次ロールアウトすると発表した。VS Code、Visual Studio、Copilot CLI、クラウドエージェント、Copilotアプリ、github.com、モバイル、JetBrains、Xcode、Eclipseのモデル選択から利用できる。",
+      "developerNote": "Copilot内で大規模コードベース向けのSol、日常のエージェントコーディング向けのTerra、低コストなLunaを使い分けられる。BusinessとEnterpriseでは管理者がGPT-5.6モデルの利用ポリシーを明示的に有効化する必要がある。",
+      "terms": [
+        {
+          "term": "Usage Based Billing",
+          "meaning": "利用したモデルやリクエスト量に応じて課金する方式。固定枠ではなく実使用量が費用に反映される。"
+        },
+        {
+          "term": "SKU",
+          "meaning": "提供プランや契約区分を表す単位。ここではCopilot Pro+、Business、Enterpriseなどを指す。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-09-openais-gpt-5-6-sol-terra-and-luna-are-now-available-in-github-copilot/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-09",
+      "category": "リポジトリ理解",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilotが未参加リポジトリの概要生成に対応",
+      "summary": "GitHub Copilotは、初めて見るリポジトリのホームページで高レベル概要を生成できるようにした。Copilot Chatがリポジトリの目的、使われている技術、貢献ガイドラインをまとめ、READMEがない場合はREADME生成にもつなげられる。",
+      "developerNote": "新規参加、OSS調査、社内リポジトリの引き継ぎで初動調査を短縮できる。自動生成された概要は便利だが、権限、機密情報、古いREADMEや設定ファイルに依存した誤読がないかレビュー前提で使いたい。",
+      "terms": [
+        {
+          "term": "リポジトリ概要",
+          "meaning": "コードベースの目的、主要技術、開発や貢献の入口を短くまとめた説明。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-09-ask-copilot-for-a-repository-overview/"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-09",
+      "category": "ログ保護",
+      "group": "dev",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercelがビルドログ内のSensitive Environment Variable値を自動マスク",
+      "summary": "Vercelは、Sensitiveとして設定された32文字以上の環境変数値がデプロイのビルドログに出た場合、値を[REDACTED]へ置き換えるようにした。マスク発生時は値を出さず、環境変数キー、プロジェクト、デプロイ情報をActivity Logへ記録する。",
+      "developerNote": "CI/CDログ経由の秘密情報漏洩を減らせる実務的な改善。ログに値を残さずに、どのキーがどのデプロイでマスクされたかを追えるため、漏洩調査と設定修正の両方に使いやすい。",
+      "terms": [
+        {
+          "term": "Sensitive Environment Variable",
+          "meaning": "APIキーやトークンなど、ログや画面に平文表示すべきでない機密性の高い環境変数。"
+        },
+        {
+          "term": "Activity Log",
+          "meaning": "プロジェクトやデプロイで発生した操作やイベントを監査目的で記録するログ。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/build-logs-now-redact-sensitive-environment-variable-values"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-09",
+      "category": "AI Gateway",
+      "group": "dev",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel AI GatewayでMuse Spark 1.1が利用可能に",
+      "summary": "Vercelは、MetaのMuse Spark 1.1をAI Gatewayで提供開始した。1Mトークンのコンテキストを持つマルチモーダル推論モデルで、テキスト、画像、動画、PDF、音声入力を受け付け、ツールやサービスをまたいだエージェント作業を計画・実行できる。",
+      "developerNote": "AI Gateway経由で長文・マルチモーダル・ツール実行型モデルを統一APIから試せる。モデル選択、利用量・コスト追跡、リトライ、フェイルオーバー、BYOKを同じ運用面で扱える点が導入判断に関わる。",
+      "terms": [
+        {
+          "term": "AI Gateway",
+          "meaning": "複数のAIモデルを統一APIから呼び出し、利用量、コスト、リトライ、フェイルオーバーなどを管理するVercelの仕組み。"
+        },
+        {
+          "term": "マルチモーダル推論モデル",
+          "meaning": "テキストだけでなく画像、音声、動画、PDFなど複数種類の入力を理解して推論するモデル。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/muse-spark-1-1-is-now-available-on-ai-gateway"
+    },
     {
       "source": "OpenAI",
       "date": "2026-07-08",
