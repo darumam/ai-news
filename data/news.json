@@ -1,7 +1,55 @@
 {
-  "lastUpdated": "2026-07-12",
+  "lastUpdated": "2026-07-14",
   "policy": "official-sources-only",
   "items": [
+    {
+      "source": "Vercel",
+      "date": "2026-07-13",
+      "category": "利用動向",
+      "group": "business",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "VercelがAI Gatewayの2026年7月利用動向を公開、オープンウェイトモデルの比率が29%に上昇",
+      "summary": "Vercelは、AI Gatewayの2026年7月Production Indexで、6月のトークン量が前月比29%、支出が27%増え、オープンウェイトモデルがトークン量の29%を占めたと報告した。高リスク用途ではAnthropic、画像ではOpenAI、動画ではxAIやByteDanceなど、用途ごとに利用先が分かれる傾向も示した。",
+      "developerNote": "モデル選定は単純な人気順ではなく、コーディング、バックオフィス、画像、動画などの用途とコストを分けて考える段階に入っている。集計データに基づくVercelの分析なので、個別組織の利用実態と混同せず、ルーティングや費用設計の参考として読むべき。",
+      "terms": [
+        {
+          "term": "オープンウェイトモデル",
+          "meaning": "学習済みのモデル重みが公開され、利用者が自分の環境や対応サービスで扱えるモデル。"
+        },
+        {
+          "term": "AI Gateway",
+          "meaning": "複数のAIモデルを統一APIから呼び出し、利用量、費用、ルーティング、再試行などを管理するVercelの仕組み。"
+        }
+      ],
+      "url": "https://vercel.com/blog/ai-gateway-production-index-july-2026"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-11",
+      "category": "画像生成",
+      "group": "model",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel AI Gatewayで画像生成・編集モデルSeedream 5.0 Proが利用可能に",
+      "summary": "Vercelは、AI GatewayでByteDanceのSeedream 5.0 Proを提供開始した。テキストからの画像生成と画像編集に対応し、画像内の文字、タイポグラフィ、チャート、タイムライン、レイアウトを含む密度の高い画像の生成を特徴としている。",
+      "developerNote": "AI Gatewayの統一APIから、画像内テキストや図表を含むデザイン生成を試せる選択肢が増えた。実運用では生成品質だけでなく、プロバイダー、費用、データ保持、編集時の再現性を確認したい。",
+      "terms": [
+        {
+          "term": "画像編集モデル",
+          "meaning": "既存画像と指示を入力し、内容の変更や加工を行うAIモデル。"
+        },
+        {
+          "term": "BYOK",
+          "meaning": "Bring Your Own Keyの略。利用者自身が契約したプロバイダーのAPIキーを持ち込む方式。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/seedream-5-0-pro-is-now-available-on-ai-gateway"
+    },
     {
       "source": "Cursor",
       "date": "2026-07-10",
@@ -25,6 +73,30 @@
         }
       ],
       "url": "https://cursor.com/changelog/side-chat"
+    },
+    {
+      "source": "Anthropic",
+      "date": "2026-07-09",
+      "category": "利用管理",
+      "group": "consumer",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "beta",
+      "title": "AnthropicがClaudeの利用状況を振り返るダッシュボードをベータ提供",
+      "summary": "Anthropicは、Claudeの利用期間、話題、利用パターンを確認し、AIとの関わり方を振り返れる機能をベータ提供した。Claude for Webまたはデスクトップ版の設定から利用でき、利用目的に沿った使い方を考える質問や、休憩のリマインダーも表示する。",
+      "developerNote": "AI利用の量だけでなく、どの作業を委任し、どこを自分で判断したかを振り返る機能。メモリを有効にしたFree、Pro、Maxユーザー向けのベータ版で、機密性の高い会話を含む可能性があるため、組織導入ではプライバシー説明と利用範囲の確認が必要。",
+      "terms": [
+        {
+          "term": "4D AI Fluency Framework",
+          "meaning": "AIへの委任、目的の説明、出力の見極め、利用への責任という4つの観点でAI活用を振り返る枠組み。"
+        },
+        {
+          "term": "メモリ",
+          "meaning": "過去の会話や利用者の情報を、後の会話で参照できるようにする機能。"
+        }
+      ],
+      "url": "https://www.anthropic.com/news/reflect-with-claude"
     },
     {
       "source": "OpenAI",
@@ -309,6 +381,30 @@
         }
       ],
       "url": "https://vercel.com/changelog/eve-chat-sdk-channel"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-07",
+      "category": "モデル提供",
+      "group": "model",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub CopilotでオープンウェイトモデルKimi K2.7 CodeがBusinessとEnterpriseにも対応",
+      "summary": "GitHub Copilotは、オープンウェイトのKimi K2.7 CodeをCopilot BusinessとEnterpriseにも提供開始した。GitHubがMicrosoft Azure上でホストし、利用量ベースで課金する。BusinessとEnterpriseでは管理者がポリシーを有効にした場合に利用できる。",
+      "developerNote": "Copilotのモデル選択肢に、低コストを狙えるオープンウェイトモデルが加わった。企業ではモデル品質だけでなく、Azureでのホスティング、利用量課金、セキュリティ、コンプライアンス、データガバナンスを確認してから有効化したい。",
+      "terms": [
+        {
+          "term": "オープンウェイトモデル",
+          "meaning": "学習済みのモデル重みが公開され、利用者が対応サービスで扱えるモデル。"
+        },
+        {
+          "term": "利用量ベース課金",
+          "meaning": "選択したモデルやリクエストの実際の利用量に応じて費用が決まる方式。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-07-kimi-k2-7-now-available-for-copilot-business-and-enterprise/"
     },
     {
       "source": "GitHub Copilot",
