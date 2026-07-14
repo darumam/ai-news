@@ -1,7 +1,55 @@
 {
-  "lastUpdated": "2026-07-14",
+  "lastUpdated": "2026-07-15",
   "policy": "official-sources-only",
   "items": [
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-14",
+      "category": "アプリケーションセキュリティ",
+      "group": "dev",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "GitHub Copilotアプリで作業中の変更をセキュリティレビュー可能に",
+      "summary": "GitHubはCopilotアプリに、作業中の変更を対象に脆弱性を確認する「/security-review」コマンドを公開プレビューで追加した。重大度と信頼度付きの指摘、修正提案、再検証をアプリ内で行え、インジェクション、XSS、パストラバーサル、弱い暗号などを確認できる。",
+      "developerNote": "コードを書いている途中に、作業ツリーの変更へ絞ったセキュリティ確認を差し込める。公開プレビューであり、AIの指摘を最終判定にせず、既存のコードスキャン、Dependabot、シークレットスキャンと役割を分けて運用したい。",
+      "terms": [
+        {
+          "term": "セキュリティレビュー",
+          "meaning": "コード変更に脆弱性がないかを確認し、問題の重要度や修正案を示す検査。"
+        },
+        {
+          "term": "パストラバーサル",
+          "meaning": "入力値を悪用して、想定外のディレクトリやファイルへアクセスさせる脆弱性。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-13",
+      "category": "コード品質",
+      "group": "dev",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "GitHub Code Qualityが公開プレビュー中のライセンス料金見積もりに対応",
+      "summary": "GitHubは、Code Qualityを利用する企業全体のアクティブコミッター数をもとに、一般提供後のライセンス料金を確認できる見積もり機能を公開プレビューした。2026年7月20日の有料化を前に、請求・ライセンス画面で見積額を確認できる。",
+      "developerNote": "AI支援のコード品質機能を導入する前に、コミッター単位の固定費とAI機能・Actionsの従量要素を分けて見積もれる。プレビュー期間は無料だが、一般提供後の料金や対象プランを組織ごとに確認してから有効化したい。",
+      "terms": [
+        {
+          "term": "アクティブコミッター",
+          "meaning": "対象期間にリポジトリへコミットした開発者。Code Qualityのライセンス数を見積もる単位。"
+        },
+        {
+          "term": "Code Quality",
+          "meaning": "コードの保守性、信頼性、カバレッジなどを分析し、品質ゲートやダッシュボードで管理するGitHubの機能。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-13-github-code-quality-license-estimate-in-public-preview/"
+    },
     {
       "source": "Vercel",
       "date": "2026-07-13",
@@ -49,6 +97,30 @@
         }
       ],
       "url": "https://vercel.com/changelog/seedream-5-0-pro-is-now-available-on-ai-gateway"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-10",
+      "category": "脆弱性修正",
+      "group": "dev",
+      "type": "security",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "GitHub Copilotがコードスキャン警告の修正案作成とCodeQL再検証を自動化",
+      "summary": "GitHubは、コードスキャン警告をCopilotへ割り当てると、関連ファイルを調査して修正案を作り、CodeQLで修正を再検証してレビュー用のドラフトプルリクエストを作成するエージェント型自動修正を公開プレビューした。",
+      "developerNote": "脆弱性の検出から修正、検証、レビュー依頼までを一つの流れにできるが、CopilotとCode Securityの契約が必要で、AIクレジットとActions分数も消費する。自動マージではなく、生成差分と検証結果を人が確認する前提で使いたい。",
+      "terms": [
+        {
+          "term": "エージェント型自動修正",
+          "meaning": "AIが複数ファイルを調査し、修正、検証、レビュー依頼まで連続して実行する方式。"
+        },
+        {
+          "term": "CodeQL",
+          "meaning": "コードをデータとして分析し、脆弱性や品質上の問題を検出するGitHubの静的解析エンジン。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-10-agentic-autofix-for-code-scanning-alerts-in-public-preview/"
     },
     {
       "source": "Cursor",
