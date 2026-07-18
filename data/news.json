@@ -1,7 +1,103 @@
 {
-  "lastUpdated": "2026-07-15",
+  "lastUpdated": "2026-07-18",
   "policy": "official-sources-only",
   "items": [
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-17",
+      "category": "利用分析API",
+      "group": "business",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilotのリポジトリ単位の利用メトリクスが一般提供に",
+      "summary": "GitHubはCopilot usage metrics REST APIで、企業・組織レポートにリポジトリ単位の活動データを追加した。Copilot coding agentが作成・マージしたプルリクエストや、Copilot code reviewのレビュー・提案数を日次で確認できる。",
+      "developerNote": "組織やユーザー単位にとどまらず、どのリポジトリでエージェントやコードレビューが使われているかを把握できる。導入効果の測定に使えるが、利用にはCopilot usage metrics policyと閲覧権限が必要。",
+      "terms": [
+        {
+          "term": "利用メトリクス",
+          "meaning": "サービスの利用状況を、ユーザー数、回数、トークン量などの指標で集計したデータ。"
+        },
+        {
+          "term": "Copilot coding agent",
+          "meaning": "GitHub上でコード変更やプルリクエスト作成を進めるCopilotの開発エージェント。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-17-repository-level-github-copilot-usage-metrics-generally-available/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-17",
+      "category": "利用分析API",
+      "group": "business",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilotアプリの利用状況が利用メトリクスAPIに追加",
+      "summary": "GitHubはCopilot usage metrics APIの企業・組織向け1日および28日レポートに、GitHub Copilotアプリの利用状況を追加した。アクティブユーザー数、セッション数、リクエスト数、プロンプト数、トークン量を他のCopilot利用状況と分けて取得できる。",
+      "developerNote": "IDE、チャット、コードレビュー、coding agentに加えてCopilotアプリの採用状況も同じAPIで追える。既存連携では利用がない場合にnullとなる項目を扱えるよう、スキーマ確認が必要。",
+      "terms": [
+        {
+          "term": "28日レポート",
+          "meaning": "直近28日間の利用状況を集計したレポート。短期の増減と継続利用を確認しやすい。"
+        },
+        {
+          "term": "トークン量",
+          "meaning": "AIへの入力とAIからの出力に含まれる、処理量を表す単位。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-17-github-copilot-app-now-available-in-the-usage-metrics-api/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-17",
+      "category": "コードレビュー",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilot code reviewが指示、セットアップ、ファイアウォールを細かく制御可能に",
+      "summary": "GitHubはCopilot code reviewで、プルリクエストのheadブランチにある指示ファイルの利用、リポジトリ単位のセットアップ手順、レビュー専用のランナー設定、既定のファイアウォールを追加した。レビュー実行環境をcloud agentから独立して構成できる。",
+      "developerNote": "レビュー用の指示や依存関係セットアップを変更して、マージ前に検証しやすくなった。ファイアウォールは既定で有効だが、self-hosted runnerでは未対応のため、ネットワークと権限の前提を確認したい。",
+      "terms": [
+        {
+          "term": "headブランチ",
+          "meaning": "プルリクエストで変更を提出する側のブランチ。レビュー対象の最新指示を置ける場所。"
+        },
+        {
+          "term": "ファイアウォール",
+          "meaning": "エージェント実行中の外部ネットワークアクセスを制限する仕組み。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-17-copilot-code-review-customization-and-configurability-improvements/"
+    },
+    {
+      "source": "Cursor",
+      "date": "2026-07-17",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Cursor in Slackが計画表示、マルチリポジトリ、チャンネル横断に対応",
+      "summary": "CursorはSlack連携で、エージェント開始前の計画表示、複数リポジトリを扱う環境、他のチャンネルやスレッドからの情報取得と投稿に対応した。作業中の進捗表示や、リポジトリ切り替えによる継続も可能になった。",
+      "developerNote": "Slackから複数リポジトリにまたがるエージェント作業を依頼し、開始前に計画を確認できる。社内導入では、チャンネル横断で読み書きできる範囲と接続リポジトリの権限を先に決めたい。",
+      "terms": [
+        {
+          "term": "マルチリポジトリ環境",
+          "meaning": "フロントエンド、バックエンドなど複数のリポジトリを一つの作業環境として扱う構成。"
+        },
+        {
+          "term": "スレッド",
+          "meaning": "Slackのチャンネル内で、特定の投稿に紐づけて会話を続ける単位。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/slack-improvements"
+    },
     {
       "source": "GitHub Copilot",
       "date": "2026-07-14",
