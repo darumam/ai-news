@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-07-18",
+  "lastUpdated": "2026-07-19",
   "policy": "official-sources-only",
   "items": [
     {
@@ -99,6 +99,78 @@
       "url": "https://cursor.com/changelog/slack-improvements"
     },
     {
+      "source": "Vercel",
+      "date": "2026-07-17",
+      "category": "エージェント開発",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel Chat SDKがネイティブSlackエージェントに対応",
+      "summary": "VercelのChat SDKにSlackアダプターが追加され、メッセージタブでのエージェント会話、提案プロンプト、状態表示、トークン単位のストリーミング応答、フィードバックボタンをネイティブに実装できるようになった。",
+      "developerNote": "Slack上の会話をAIエージェントのUIとして構築しやすくなった。GovSlackなどストリーミング非対応環境ではPost+Editへ切り替わるため、対象ワークスペースの対応状況と会話履歴の保持方法を先に確認したい。",
+      "terms": [
+        {
+          "term": "ストリーミング応答",
+          "meaning": "AIの生成結果を完成まで待たず、生成された部分から順に画面へ表示する方式。"
+        },
+        {
+          "term": "Slackアダプター",
+          "meaning": "Chat SDKのエージェントをSlackのメッセージやイベントに接続する部品。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/chat-sdk-adds-native-slack-agent-support"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-17",
+      "category": "開発エージェント",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel PluginがKimi Code CLIで利用可能に",
+      "summary": "Vercel PluginがKimi Code CLIのサードパーティープラグインとして利用可能になり、Next.js、AI SDK、Vercel FunctionsなどのVercelプラットフォーム知識をKimi Codeから参照できるようになった。",
+      "developerNote": "Kimi Codeの開発作業にVercelの最新APIや推奨パターンを取り込めるため、Vercel向け実装の調査コストを下げられる。プラグインが参照する知識の範囲と、CLIへ渡すコードや設定の取り扱いを確認したい。",
+      "terms": [
+        {
+          "term": "サードパーティープラグイン",
+          "meaning": "製品本体の提供元以外の拡張機能として追加できる部品。"
+        },
+        {
+          "term": "Vercel Functions",
+          "meaning": "Vercel上でサーバー側処理を実行するための関数実行基盤。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/vercel-plugin-now-available-in-kimi-code-cli"
+    },
+    {
+      "source": "Vercel",
+      "date": "2026-07-16",
+      "category": "モデル提供",
+      "group": "model",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Vercel AI GatewayでKimi K3が利用可能に",
+      "summary": "VercelのAI GatewayでMoonshot AIのオープンソースモデルKimi K3が利用可能になった。100万トークンのコンテキスト、テキスト・画像・動画入力、ソフトウェア開発や知識作業向けの推論を特徴とする。",
+      "developerNote": "長いコードベースや画像・動画を含む設計作業を、AI Gatewayの統一API、利用量・費用管理、再試行・フェイルオーバー設定と組み合わせて試せる。常時思考モードのため、品質だけでなくレイテンシーと費用も実測したい。",
+      "terms": [
+        {
+          "term": "コンテキストウィンドウ",
+          "meaning": "モデルが一度の処理で参照できる入力と出力の範囲。大きいほど長い資料やコードを扱いやすい。"
+        },
+        {
+          "term": "オープンソースモデル",
+          "meaning": "モデルの重みや関連コードが公開され、条件に従って利用・検証できるモデル。"
+        }
+      ],
+      "url": "https://vercel.com/changelog/kimi-k3-is-now-available-on-ai-gateway"
+    },
+    {
       "source": "GitHub Copilot",
       "date": "2026-07-14",
       "category": "アプリケーションセキュリティ",
@@ -121,6 +193,30 @@
         }
       ],
       "url": "https://github.blog/changelog/2026-07-14-security-reviews-now-available-in-the-github-copilot-app/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-14",
+      "category": "開発環境",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub CopilotのVisual Studio向け6月更新で利用可視化とMCP信頼機能を強化",
+      "summary": "GitHub CopilotのVisual Studio向け6月更新で、利用量のリアルタイム表示と上限・超過の通知、MCPサーバー向けの信頼レイヤー、C++モダナイゼーションエージェントの一般提供が追加された。",
+      "developerNote": "利用ベース課金の状況を開発者が把握しやすくなり、MCPサーバーの信頼確認も開発環境に組み込まれた。組織導入では通知閾値、超過課金、許可するMCPサーバーの管理方針を決めたい。",
+      "terms": [
+        {
+          "term": "MCPサーバー",
+          "meaning": "AIエージェントへ外部ツールやデータを提供するサーバー。"
+        },
+        {
+          "term": "利用ベース課金",
+          "meaning": "固定料金だけでなく、モデルや機能の実際の利用量に応じて料金が変わる方式。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-14-github-copilot-in-visual-studio-june-update/"
     },
     {
       "source": "GitHub Copilot",
@@ -753,6 +849,30 @@
         }
       ],
       "url": "https://github.blog/changelog/2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-01",
+      "category": "提供終了",
+      "group": "policy",
+      "type": "policy",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Modelsを7月30日に完全終了、既存利用者も対象に",
+      "summary": "GitHubはGitHub Modelsを2026年7月30日に完全終了すると発表した。プレイグラウンド、モデルカタログ、推論API、BYOKエンドポイントが全利用者向けに停止され、7月16日と23日には短時間の計画停止も実施する。",
+      "developerNote": "既存のGitHub Models利用も移行対象となるため、推論APIやBYOKを使う開発・検証環境は期限前にMicrosoft Foundryなどへ切り替える必要がある。7月23日の計画停止を含め、依存箇所と代替先を確認したい。",
+      "terms": [
+        {
+          "term": "BYOK",
+          "meaning": "Bring Your Own Keyの略。利用者自身が契約したモデル提供元のAPIキーを持ち込む方式。"
+        },
+        {
+          "term": "計画停止",
+          "meaning": "サービス終了や切り替えの前に、動作確認のため予定して実施する一時的な停止。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/"
     },
     {
       "source": "Cursor",
