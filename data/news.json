@@ -1,7 +1,127 @@
 {
-  "lastUpdated": "2026-07-19",
+  "lastUpdated": "2026-07-22",
   "policy": "official-sources-only",
   "items": [
+    {
+      "source": "OpenAI",
+      "date": "2026-07-22",
+      "category": "企業向けAIエージェント",
+      "group": "business",
+      "type": "business",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "OpenAIが企業向けAIエージェント製品Presenceを提供開始",
+      "summary": "OpenAIは、企業の顧客対応や社内業務に使う音声・チャットAIエージェント製品Presenceを、対象企業向けの限定的な一般提供プログラムとして開始した。知識とシステム権限を業務ごとに絞り、承認済みアクション、ガードレール、評価、有人引き継ぎを組み合わせられる。",
+      "developerNote": "自社システムへの接続や承認操作を含む企業エージェントを、権限とエスカレーション規則込みで運用する製品。セルフサービスではなく、対象企業への導入支援を前提とする点に注意したい。",
+      "terms": [
+        {
+          "term": "ガードレール",
+          "meaning": "AIが許可された範囲を越えないように、入力、処理、出力、操作を制限する仕組み。"
+        },
+        {
+          "term": "有人引き継ぎ",
+          "meaning": "AIだけで処理を続けず、条件に応じて人へ対応を渡すこと。"
+        }
+      ],
+      "url": "https://openai.com/index/introducing-openai-presence/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-22",
+      "category": "利用分析API",
+      "group": "business",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Copilotの利用分析に導入効果ダッシュボードを追加",
+      "summary": "GitHubは企業管理者と組織オーナー向けに、Copilotの利用者を導入フェーズ別に分け、利用の深さ、プルリクエストの処理速度、導入状況の推移を可視化するダッシュボードを追加した。",
+      "developerNote": "単なるアクティブユーザー数ではなく、コード中心、エージェント中心、複数エージェント・Copilotアプリ利用などの段階別に導入効果を見られる。利用分析APIの権限と直近28日集計の前提を確認したい。",
+      "terms": [
+        {
+          "term": "導入フェーズ",
+          "meaning": "AI機能の使い方や深さに応じて利用者を分類した段階。"
+        },
+        {
+          "term": "コホート",
+          "meaning": "共通する条件でまとめた利用者の集団。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-22-new-copilot-usage-metrics-impact-dashboard/"
+    },
+    {
+      "source": "Cursor",
+      "date": "2026-07-22",
+      "category": "モデルルーティング",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "Cursor RouterがAutoモードのモデル自動振り分けに対応",
+      "summary": "Cursorは、リクエストの内容や複雑さに応じて適切なモデルへ振り分けるCursor Routerを、TeamsとEnterprise向けに提供開始した。品質重視、バランス、費用重視の3モードと、チーム・グループ単位の管理設定を利用できる。",
+      "developerNote": "日常的な依頼を費用効率のよいモデルへ寄せ、難しい作業だけを高性能モデルへ回す運用をAutoモードで標準化できる。ルーティング先の許可・禁止モデルと、モードごとの費用を管理者が確認したい。",
+      "terms": [
+        {
+          "term": "モデルルーティング",
+          "meaning": "依頼内容に応じて、複数のAIモデルから適切なモデルを自動選択する仕組み。"
+        },
+        {
+          "term": "フェイルオーバー",
+          "meaning": "利用中のモデルや提供元に問題があるとき、別の経路へ切り替えて処理を続けること。"
+        }
+      ],
+      "url": "https://cursor.com/changelog/router"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-21",
+      "category": "モデル",
+      "group": "model",
+      "type": "model",
+      "priority": "high",
+      "mustRead": true,
+      "status": "preview",
+      "title": "Gemini 3.6 FlashがGitHub Copilotで利用可能に",
+      "summary": "GitHub Copilotで、GoogleのGemini 3.6 Flashが段階的に提供開始された。Web・アプリ開発、コーディング、長時間のエージェント作業を想定し、推論の強さを設定できるほか、複雑な作業で並列ツール実行に対応する。",
+      "developerNote": "Copilotの複数の開発環境で同じモデルを選べるが、BusinessとEnterpriseでは管理者がGemini 3.6 Flash Previewポリシーを有効にする必要がある。段階展開中のため、表示されない場合がある。",
+      "terms": [
+        {
+          "term": "段階展開",
+          "meaning": "利用者全体へ一度に開放せず、対象範囲を広げながら順次提供する方法。"
+        },
+        {
+          "term": "並列ツール実行",
+          "meaning": "複数のツール呼び出しを同時に進め、複雑な作業を効率化する機能。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-21-gemini-3-6-flash-is-now-available-in-github-copilot/"
+    },
+    {
+      "source": "GitHub Copilot",
+      "date": "2026-07-20",
+      "category": "コード品質",
+      "group": "dev",
+      "type": "feature",
+      "priority": "high",
+      "mustRead": true,
+      "status": "stable",
+      "title": "GitHub Code Qualityが一般提供に移行",
+      "summary": "GitHub Code QualityがGitHub Enterprise CloudとGitHub Teamで一般提供になった。CodeQLの決定的な分析とAI支援の検出、Copilot Autofix、組織ダッシュボード、コードカバレッジ、ルールセットによる品質ゲートを組み合わせられる。",
+      "developerNote": "AIが生成するコードの保守性や信頼性をプルリクエストで確認し、修正提案までつなげられる。一般提供に伴い有料製品となり、AI処理とGitHub Actionsの計算費用も発生するため、対象リポジトリを見直したい。",
+      "terms": [
+        {
+          "term": "品質ゲート",
+          "meaning": "テスト結果や品質指標が基準を満たさない変更を、次の工程へ進めない仕組み。"
+        },
+        {
+          "term": "決定的な分析",
+          "meaning": "同じコードと条件なら同じ結果になる規則ベースの静的解析。"
+        }
+      ],
+      "url": "https://github.blog/changelog/2026-07-20-github-code-quality-is-now-generally-available/"
+    },
     {
       "source": "GitHub Copilot",
       "date": "2026-07-17",
